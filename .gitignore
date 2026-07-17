@@ -1,0 +1,6 @@
+__pycache__/
+.DS_Store
+*.docx
+*_RevisionReport.json
+*_RevisionReport.csv
+*_ExecutionLog.txt

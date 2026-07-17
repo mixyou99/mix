@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Word Revision Builder Mac</title>
+  <link rel="stylesheet" href="/styles.css?v=6">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <div>
+        <h1>Word Revision Builder Mac</h1>
+        <p>Choose files in Finder or drag DOCX files into the app. Simulation timestamps are written only to JSON and CSV.</p>
+      </div>
+      <div class="header-actions">
+        <button id="resetButton" type="button">Reset</button>
+        <button id="buildButton" class="primary">Compare and Build</button>
+      </div>
+    </header>
+
+    <section class="grid two">
+      <fieldset>
+        <legend>Documents</legend>
+        <div class="file-pickers">
+          <div class="file-card">
+            <strong>Original document A</strong>
+            <div class="drop-zone" data-role="original">Drop DOCX here</div>
+            <button type="button" data-choose="original">Choose in Finder</button>
+            <div class="file-status" id="originalStatus">No file selected.</div>
+          </div>
+          <div class="file-card">
+            <strong>Revised document B</strong>
+            <div class="drop-zone" data-role="revised">Drop DOCX here</div>
+            <button type="button" data-choose="revised">Choose in Finder</button>
+            <div class="file-status" id="revisedStatus">No file selected.</div>
+          </div>
+        </div>
+        <details>
+          <summary>Manual path fallback</summary>
+          <label>Original document A path
+            <input id="originalPath" placeholder="/Users/you/Documents/original.docx">
+          </label>
+          <label>Revised document B path
+            <input id="revisedPath" placeholder="/Users/you/Documents/revised.docx">
+          </label>
+        </details>
+      </fieldset>
+
+      <fieldset>
+        <legend>Reviewer</legend>
+        <label>Reviewer display name
+          <input id="reviewerName" value="Reviewer" placeholder="Reviewer">
+        </label>
+        <label>Execution mode
+          <select id="executionMode">
+            <option>Actual Audit Mode</option>
+            <option>Simulation Manifest Mode</option>
+          </select>
+        </label>
+        <label>Granularity
+          <select id="granularity">
+            <option selected>word-level</option>
+            <option>character-level</option>
+          </select>
+        </label>
+        <label>Save new files to
+          <select id="outputLocation">
+            <option value="same-folder">Same folder as original</option>
+            <option value="desktop">Desktop</option>
+          </select>
+        </label>
+      </fieldset>
+    </section>
+
+    <section class="grid two">
+      <fieldset>
+        <legend>Compare Options</legend>
+        <div class="checks">
+          <label><input type="checkbox" data-option="formatting" checked> formatting</label>
+          <label><input type="checkbox" data-option="case_changes" checked> case changes</label>
+          <label><input type="checkbox" data-option="whitespace" checked> whitespace</label>
+          <label><input type="checkbox" data-option="tables" checked> tables</label>
+          <label><input type="checkbox" data-option="headers_and_footers" checked> headers and footers</label>
+          <label><input type="checkbox" data-option="footnotes_and_endnotes" checked> footnotes and endnotes</label>
+          <label><input type="checkbox" data-option="text_boxes" checked> text boxes</label>
+          <label><input type="checkbox" data-option="fields" checked> fields</label>
+          <label><input type="checkbox" data-option="comments" checked> comments</label>
+          <label><input type="checkbox" data-option="moves" checked> moves</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Timeline</legend>
+        <div class="row">
+          <label>Start D
+            <div class="datetime-combo" data-datetime="requestedStart"></div>
+          </label>
+          <label>End E
+            <div class="datetime-combo" data-datetime="requestedEnd"></div>
+          </label>
+        </div>
+        <div class="row">
+          <label>Minimum interval
+            <input id="minimumInterval" type="number" min="1" value="1">
+          </label>
+          <label>Random seed
+            <input id="randomSeed" placeholder="blank = secure random">
+          </label>
+        </div>
+      </fieldset>
+    </section>
+
+    <section>
+      <fieldset>
+        <legend>Excluded Periods</legend>
+        <table>
+          <thead>
+            <tr>
+              <th>Start</th>
+              <th>End</th>
+              <th>Description</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="excludedBody"></tbody>
+        </table>
+        <button id="addExcluded" type="button">Add Excluded Period</button>
+      </fieldset>
+    </section>
+
+    <section class="grid two">
+      <fieldset>
+        <legend>Output</legend>
+        <pre id="output">Ready.</pre>
+      </fieldset>
+      <fieldset>
+        <legend>Validation Results</legend>
+        <pre id="validation">Mac version note: Finder-selected files can save beside the original. Dragged files save output to Desktop because browsers hide the original folder path.</pre>
+      </fieldset>
+    </section>
+  </main>
+  <script src="/app.js?v=6"></script>
+</body>
+</html>
