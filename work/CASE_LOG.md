@@ -1,6 +1,10 @@
 # MBA Case Library — CASE_LOG (KMB689 Big Data)
 
-*Change log: **Sep 9, 2026 — R2 (Exhibit A·E) 전 게이트 통과.** `cases/ReviewResponsePlaybook/student/` 에
+*Change log: **Sep 9, 2026 — Exhibit B·C·D·F 저작 완료, 전 게이트 통과.** 회귀표 셋(표 4·5·6)을
+Exhibit B·C·D 로, 학생 실습 별지를 EXHIBITS_F_KR·EN 으로 신규 저작. A–E KR 8/8 · EN 7/7 PASS,
+별지 F KR 7/7 · EN 6/6 PASS. 원문 대조 기준은 게재본 `vol24_no3_1.pdf` 다 —
+Dropbox 의 `…_교정본.pdf` 는 게재 전 판이라 값이 다르다(→ `docs/rounds/BCDF_kickoff.md` §3).
+**Sep 9, 2026 — R2 (Exhibit A·E) 전 게이트 통과.** `cases/ReviewResponsePlaybook/student/` 에
 본문·Exhibit KR·EN docx 4종 배치(바이트 동일 복사). 게이트: E-G0·G3·G4·G5·G7·G7R·G8 KR·EN 전항 PASS,
 E-G9(KR/EN 등가) PASS. 편집 원본·렌더러·게이트는 `work/reviewresponse/` · `tools/`.
 `03_final` 승격은 Exhibit F 이후. 상세 → `docs/rounds/ExhibitAE_R2_report.md`.
@@ -150,7 +154,7 @@ professor marks `Citable?`.*
 | TwitchGovernance | ✅ | '720p로 강등된 스트리머': 플랫폼 비용 통제는 누구를 다치게 하는가 | Regression (+ MIS-lens) | ☐ |
 | BikeShareEqualizer | ✅ | 따릉이는 골목 상권을 살리는가? | Regression | ☐ |
 | AppUpdateTiming | ✅ | 타이밍의 기술: 앱을 언제 업데이트/할인할 것인가 | Regression | ☐ |
-| ReviewResponsePlaybook | ✅ | 리뷰에 답할 것인가, 어떻게 답할 것인가 | Regression · **R2 통과 → `cases/ReviewResponsePlaybook/student/`** (FULL_KR·EN + EXHIBITS_KR·EN, docx). Exhibit F·교원 노트 미저작 · `03_final` 승격은 F 이후 | ☐ |
+| ReviewResponsePlaybook | ✅ | 리뷰에 답할 것인가, 어떻게 답할 것인가 | Regression · **R2 + B·C·D·F 통과 → `cases/ReviewResponsePlaybook/student/`** (FULL_KR·EN + EXHIBITS_KR·EN(A–E) + EXHIBITS_F_KR·EN(별지), docx 6종). 교원 노트 미저작 · `03_final` 승격 가능 | ☐ |
 | PrivacyLabelsMinimization | ✅ | 데이터를 "덜 모으겠다"는 선언이 앱을 오래 살아남게 하는가 | Regression (+ MIS-lens) · **풀 케이스 → 03_final** | ☐ |
 | PrivacyLabelsUtilization | ✅ | 프라이버시 영양 라벨의 시대: 데이터를 얼마나·어떻게 쓸 것인가 | Regression (+ MIS-lens) · **풀 케이스 → 03_final** | ✅ |
 | WebtoonParadox | ✅ | 웹툰 개인화의 역설: 발견의 이점이 예측의 리스크로 | **Experiment (RCT)** — in regression session | ☐ |

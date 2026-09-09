@@ -88,6 +88,24 @@ PDF 는 `--from pdf` 로 보조 확인용으로만 쓴다.
   ⑥ D-2 차 사유의 문맥이 `removed 8,731\s+\n?observations` 로 지나치게 길어 문맥창
      (±45자)을 넘겼다. `removed 8,731` 로 줄인다.
   ⚠ 넷 다 범주는 이미 옳고 표현만 KR 이었다. 판정 기준·화이트리스트는 불변이다.
+
+  (2026-09-09 등록) B·C·D 저작에서 나온 오탐 2건.
+  ⑦ E-G0 — 원고의 **교호항 곱셈 기호**(`답변수 *답변속도`)를 마커 누출로 셌다. 원문이 그렇게
+     인쇄하고 S2-1′ 가 원문 표기 그대로를 요구하므로 산출물을 고칠 수 없다. **변수명이 바로 뒤에
+     붙은 `*` 만** 내용으로 인정한다(`INTERACTION_STAR`). 실측 누출은 글자 뒤에 붙고 변수명이
+     따라오지 않으므로 탐지력은 줄지 않는다.
+  ⑧ E-G7 — `모형 3`·`모형 4` 의 번호가 미해명으로 남았다. '원고 표 번호' 사유가 이미 있는데
+     표만 알고 모형을 몰랐다. 같은 구조 참조이므로 사유명을 '원고 표·모형 번호' 로 넓혔다.
+  ⑨ E-G7 — 별지 F 의 문항 번호(`F-3`·`F-4`…)가 미해명으로 남았다. 원고 값이 아니라
+     우리 문서의 구조 번호이므로 '별지 문항 번호' 사유를 새로 만들었다. `F-\d` 로 좁혀 둔다.
+  ⑩ 별지 F 를 Exhibit 표로 취급했다 — E-G4·E-G7R 이 **구조상 통과 불가**였다.
+     E-G4 는 표 3 의 행·열 번호를 보는데 별지에는 **원고 표가 0개**다(E-G9 실측).
+     E-G7R 은 팩트표 필수 값이 인쇄됐는지 보는데, 별지가 그 79종을 실으면 **그것이 정답 유출**이다
+     (CASE_LOG 의 'Exhibit F 정답유출 정정' 이 같은 사고다). 검사가 틀린 것을 요구하고 있었다.
+     → `--kind supplement` 를 둔다. 별지에서는
+        · E-G4 대신 **E-G4S**(원고 표 0개)를 본다 — 별지가 표를 실으면 그것이 결함이다
+        · E-G7R 은 **적용 대상이 아님**을 찍고 셈에서 뺀다 (통과로 세지 않는다)
+     ⚠ 기본값은 `exhibit` 이다. Exhibit A–E 는 종전 그대로 8게이트 전부 받는다.
 ──────────────────────────────────────────────────────────────────────────
 """
 import re, sys, os, zipfile, html, argparse, collections
@@ -269,6 +287,8 @@ T1_VARS = ("리뷰수", "답변수", "답변속도", "고객평점하락", "누�
 # EN 판 변수명 — 없으면 EN 표 행이 line_role 에 하나도 안 잡힌다(위 이력 ③).
 T1_VARS_EN = ("review_count", "reply_count", "reply_speed", "rating_decline",
               "cumulative_reviews", "COVID_cases")
+
+INTERACTION_STAR = re.compile(r"(?<=\s)\*(?=(?:" + "|".join(T1_VARS + T1_VARS_EN) + "))")
 # 줄머리 고정을 푼다 — D-5 가 역할 열을, D-8 이 행 번호를 앞에 붙여 변수명이 더는 줄머리가 아니다.
 # 대신 표 행임을 **구조로** 확인한다(아래 line_role). 변수명만으로 잡으면 산문까지 표 행이 된다.
 T_ROW  = re.compile("|".join(T1_VARS + T1_VARS_EN) + r"|고객평점|누적리뷰|코로나확")
@@ -304,7 +324,10 @@ REASONS = [
     # 팩트표 두 값의 차를 명시한 것 — D-2 ⚠ (35,465 − 26,734 = 8,731).
     # 문맥은 D-2 문장으로 좁혀 둔다. 일반화하면 검사가 무력해진다.
     ("팩트표 값의 차 (D-2 ⚠)", _ctx(r"줄어든 규칙은 원고에 없다|removed 8,731|8,731\s*개가 줄어든")),
-    ("원고 표 번호", _ctx(r"표 \d|<표|[Tt]ables? \d|[Tt]ables? \(\d")),
+    # `모형 1`~`모형 4` 추가 — 원고의 모형 번호는 표 번호와 같은 구조 참조다 (B·C·D 저작).
+    ("원고 표·모형 번호", _ctx(r"표 \d|<표|[Tt]ables? \d|[Tt]ables? \(\d|모형 \d|[Mm]odels? \d")),
+    # 별지 F 의 문항 번호 (F-1 ~ F-6). 원고 값이 아니라 우리 문서의 구조 번호다.
+    ("별지 문항 번호", _ctx(r"F-\d")),
     ("시차 표기 (t−1 · t−2)", _ctx(r"t[−\-]\d")),
     ("모형 계수 첨자", _ctx(r"[βb]\d|=\s*[βb]\d")),
     ("이변량 코딩값 (0/1)", _ctx(r"이변량|경우 1|경우 0|=0\)|=1\)|0/1|binary")),
@@ -344,6 +367,12 @@ REASONS = [
 #    마스킹 개수를 함께 출력하는 이유가 이것이다.
 STAR_LEGEND = re.compile(r"\*{1,3}\s*p\s*<")
 COEF_STAR   = re.compile(r"(?<=\d)\*{1,3}")      # 계수 유의성 별표 — 내용이다
+# ⚠ 확장 (2026-09-09): 원고의 **교호항 곱셈 기호**도 내용이다. 원문이 `답변수 *답변속도`
+#    처럼 앞만 띄고 `*` 를 쓴다(표 5·표 6). S2-1′ 가 원문 표기 그대로를 요구하므로
+#    산출물을 고칠 수 없고, 고치면 원문 전재가 아니다 → 검사식이 인정한다(G2′).
+#    **변수명이 바로 뒤에 붙은 것만** 인정한다. 실측된 마커 누출(`제외한다.**`·`seminar.**`)은
+#    글자 뒤에 붙고 변수명이 따라오지 않으므로 이 마스크에 걸리지 않는다.
+#    실제 정의는 T1_VARS 바로 뒤에 있다 — 변수명 목록이 있어야 만들 수 있기 때문이다.
 BOLD_LEFTOVER = re.compile(r"\*\*(?=\S)[^*\n]{1,80}?\*\*")   # 진단용 — 판정은 아래 전수 셈이 한다
 
 
@@ -351,6 +380,7 @@ def g_literals(text):
     """리터럴·이스케이프 잔존 — 렌더러 결함의 직접 증상."""
     legend_masked = STAR_LEGEND.sub(" ", text)   # ① 유의수준 범례
     masked = COEF_STAR.sub("", legend_masked)    # ② 계수에 붙은 유의성 별표
+    masked = INTERACTION_STAR.sub("", masked)    # ③ 원고의 교호항 곱셈 기호
     stars = masked.count("*")                    # 남은 별표는 전부 위반 (합격선 0)
     n_content = text.count("*") - stars          # 가린 개수 — 버리지 않고 함께 찍는다
     bad = {
@@ -391,6 +421,14 @@ def g_pre_disclosure(text):
         masked = re.sub(a, " ", masked)
     hits = [p for p in ban if re.search(p, masked)]
     return (not hits), [f"판정 문구 /{p}/" for p in hits]
+
+
+def g_supplement_no_tables(path, mode):
+    """E-G4S · 별지에는 원고 표가 없어야 한다. 표를 실으면 정답 유출 쪽으로 기운다."""
+    if mode == "pdf":
+        return None, ["docx 필요 — 표 구조는 PDF 에서 정확히 셀 수 없다"]
+    n = len(re.findall(r"<w:tbl[ >]", docx_xml(path)))
+    return (n == 0), [f"원고 표 {n}개" + ("" if n == 0 else " — 별지는 문제만 싣는다")]
 
 
 def g_table3_numbers(text):
@@ -522,6 +560,8 @@ def main():
     ap.add_argument("--from", dest="mode", choices=["docx", "pdf"], default="docx")
     ap.add_argument("--reasons", help="E-G8 사유표 TSV")
     ap.add_argument("--required", help="E-G7R 필수 값 목록 (한 줄에 하나)")
+    ap.add_argument("--kind", choices=["exhibit", "supplement"], default="exhibit",
+                    help="supplement = 별지 F (문제만). E-G4 대신 E-G4S, E-G7R 미적용")
     a = ap.parse_args()
 
     text = load(a.target, a.mode)
@@ -553,9 +593,17 @@ def main():
     run("E-G0", "리터럴·이스케이프 잔존", g_literals(text))
     run("E-G5", "이미지 0", g_images(a.target, a.mode))
     run("E-G3", "표 주변 사전 고지 없음", g_pre_disclosure(text))
-    run("E-G4", "표 3 원문 번호 · 2번 결번", g_table3_numbers(text))
+    if a.kind == "supplement":
+        run("E-G4S", "별지에 원고 표 없음", g_supplement_no_tables(a.target, a.mode))
+    else:
+        run("E-G4", "표 3 원문 번호 · 2번 결번", g_table3_numbers(text))
     census = run("E-G7", "숫자 토큰 전수 대조", g_token_census(text))
-    run("E-G7R", "팩트표 필수 값 역검사", g_required(census[2], required))
+    if a.kind == "supplement":
+        # 별지가 팩트표 필수 값을 다 실으면 그것이 정답 유출이다. 셈에서 뺀다.
+        print("[ N/A] E-G7R · 팩트표 필수 값 역검사")
+        print("        별지는 문제만 싣는다 — 필수 값 역검사는 적용 대상이 아니다")
+    else:
+        run("E-G7R", "팩트표 필수 값 역검사", g_required(census[2], required))
     run("E-G8", "수사 전수 스캔", g_count_words(text, a.reasons))
     if a.pair:
         run("E-G9", "KR/EN 등가", g_parity(a.target, a.pair, a.mode))

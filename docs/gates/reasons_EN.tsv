@@ -13,4 +13,7 @@
 31	two	일치: 2 = §4.1.1 body · Table 1 note	Rating decline — the manuscript states this two ways
 35	two	일치: 2 = Table 1 · §4.1.1 body	COVID_cases — the manuscript also states this two ways
 38	all	일치: 5 = reply_count · reply_speed · rating_decline + 통제 2 (cumulative_reviews · COVID_cases)	§4.2.1 states that all controls and predictors are measured at week t−1
-50	three	일치: 3 = Table 1 · Table 2 · Table 3 (Exhibit E 수록분)	These three tables carry no significance stars
+78	one	일치: 1 = 원고가 그림 2 에서 보인 문장 하나	the paper shows in that figure is this one sentence
+81	one	일치: 1 = 모형당 조절항 한 개 (Model 3 = rating_decline*reply_count, Model 4 = rating_decline*reply_speed)	Models 3 and 4 each carry one moderation term only
+97	one	일치: 1 = 원고가 그림 3 에서 보인 문장 하나	the paper shows in that figure is this one sentence
+100	three	일치: 3 = Table 1 · Table 2 · Table 3 (Exhibit E 수록분)	These three tables carry no significance stars

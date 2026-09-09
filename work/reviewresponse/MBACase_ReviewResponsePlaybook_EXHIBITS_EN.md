@@ -78,6 +78,81 @@ ln(review_count [i,t]) = β0
 
 ---
 
+## Exhibit B · Table 4 — Main effects (MBA technical session)
+
+*Manuscript Table 4, "고정효과패널분석 결과" (fixed-effects panel analysis). Reproduced as printed.*
+
+| | Variable | Model 1 Coefficient (Standard error) |
+|---|---|---|
+| Intensity | reply_count | 0.139\*\*\* (0.010) |
+| Timeliness | reply_speed | 0.032\*\* (0.011) |
+| Rating decline | rating_decline | -0.046\*\*\* (0.006) |
+| Controls | cumulative_reviews | 0.130\*\* (0.047) |
+| | COVID_cases | -0.665\*\*\* (0.020) |
+| | Constant | 7.143\*\*\* (0.346) |
+| | Observations | 26,734 |
+| | Groups | 856 |
+| | Adjusted R2 | 0.479 |
+
+*Significance: \*\*\*p <0.001, \*\*p < 0.01, \*p < 0.05. Parentheses report standard errors.*
+
+---
+
+## Exhibit C · Table 5 — Timeliness as a moderator (MBA technical session)
+
+*Manuscript Table 5, "적시성의 조절효과 분석 결과". Reproduced as printed.*
+
+| | Variable | Model 2 Coefficient (Standard error) |
+|---|---|---|
+| Intensity | reply_count | 0.149\*\*\* (0.011) |
+| Timeliness | reply_speed | -0.027 (0.020) |
+| | reply_count \*reply_speed | 0.027\*\*\* (0.007) |
+| Rating decline | rating_decline | -0.047\*\*\* (0.006) |
+| Controls | cumulative_reviews | 0.131\*\* (0.047) |
+| | COVID_cases | -0.663\*\*\* (0.020) |
+| | Constant | 7.098\*\*\* (0.346) |
+| | Observations | 26,734 |
+| | Groups | 856 |
+| | Adjusted R2 | 0.480 |
+
+*Significance: \*\*\*p <0.001, \*\*p < 0.01, \*p < 0.05. Parentheses report standard errors.*
+
+**Manuscript Figure 2 — not reproduced**
+
+> Its caption reads `<그림 2> 적시성 조절효과 그래프`, and its axis label `(모형 2) 적시성×적극성`.
+> What the paper shows in that figure is this one sentence — *"as responsiveness to negative reviews increases, the host's intensive replying becomes more effective for the property's success."*
+> Consult the original article for the plot itself.
+
+---
+
+## Exhibit D · Table 6 — Rating decline as a moderator (MBA technical session)
+
+*Manuscript Table 6, "평판 하락의 조절효과 분석 결과". Reproduced as printed. Models 3 and 4 each carry one moderation term only; the paper leaves the other cell as `-`.*
+
+| | Variable | Model 3 Coefficient (Standard error) | Model 4 Coefficient (Standard error) |
+|---|---|---|---|
+| Situational factor (rating decline) | rating_decline | -0.081\*\*\* (0.013) | -0.049\*\*\* (0.007) |
+| Intensity | reply_count | 0.133\*\*\* (0.010) | 0.139\*\*\* (0.010) |
+| | rating_decline \*reply_count | 0.020\*\*\* (0.005) | - |
+| Timeliness | reply_speed | 0.033\*\* (0.011) | 0.039\*\* (0.012) |
+| | rating_decline \*reply_speed | - | -0.013 (0.011) |
+| Controls | cumulative_reviews | 0.129\*\* (0.047) | 0.130\*\* (0.047) |
+| | COVID_cases | -0.663\*\*\* (0.020) | -0.665\*\*\* (0.020) |
+| | Constant | 7.142\*\*\* (0.346) | 7.142\*\*\* (0.346) |
+| | Observations | 26,734 | 26,734 |
+| | Groups | 856 | 856 |
+| | Adjusted R2 | 0.480 | 0.479 |
+
+*Significance: \*\*\*p <0.001, \*\*p < 0.01, \*p < 0.05. Parentheses report standard errors.*
+
+**Manuscript Figure 3 — not reproduced**
+
+> Its caption reads `<그림 3> 평판 하락의 조절효과 그래프`, and its axis label `(모형 3) 평판 하락 × 적극성`.
+> What the paper shows in that figure is this one sentence — *"as reputation declines, the host's intensive replying to negative reviews becomes more effective for success."*
+> Consult the original article for the plot itself.
+
+---
+
 ## Exhibit E · Tables 1, 2, 3 (shared)
 
 *These three tables carry no significance stars — the legend belongs on the regression tables (Exhibits B, C, D).*
