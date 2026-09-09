@@ -1,0 +1,16 @@
+17	two	일치: 2 = 865 · 856 (원고가 보고하는 두 모텔 수)	The manuscript reports two different motel counts
+17	all	일치: 3 = Table 4 · Table 5 · Table 6	the group counts in all three regression tables (4, 5, 6)
+17	three	일치: 3 = Table 4 · Table 5 · Table 6	all three regression tables (4, 5, 6) say 856
+17	both	일치: 2 = 수집 단계 · 35,465 패널의 최종 단계	Section 4.1 uses 865 both at collection and as the final count
+17	two	일치: 2 = 865 · 856	The manuscript does not sort these two
+18	both	일치: 2 = 35,465 · 26,734	The paper describes both 35,465 and 26,734 as its "final" panel
+22	four	일치: 4 = review_count · reply_count · reply_speed · rating_decline	Six variables — four core + two controls
+22	two	일치: 2 = cumulative_reviews · COVID_cases	four core + two controls
+22	all	일치: 5 = reply_count · reply_speed · rating_decline · cumulative_reviews · COVID_cases (종속 review_count 제외)	all at lag t−1 except the outcome
+23	four	일치: 4 = success · intensity · timeliness · rating decline (원고 §4의 셈)	The body of §4 counts four measured quantities
+23	two	일치: 2 = cumulative_reviews · COVID_cases	the table below also carries the two controls
+28	two	일치: 2 = §4.1.1 body 표기 + Table 1 note 표기	Binary 0/1 (two definitions — below)
+31	two	일치: 2 = §4.1.1 body · Table 1 note	Rating decline — the manuscript states this two ways
+35	two	일치: 2 = Table 1 · §4.1.1 body	COVID_cases — the manuscript also states this two ways
+38	all	일치: 5 = reply_count · reply_speed · rating_decline + 통제 2 (cumulative_reviews · COVID_cases)	§4.2.1 states that all controls and predictors are measured at week t−1
+50	three	일치: 3 = Table 1 · Table 2 · Table 3 (Exhibit E 수록분)	These three tables carry no significance stars

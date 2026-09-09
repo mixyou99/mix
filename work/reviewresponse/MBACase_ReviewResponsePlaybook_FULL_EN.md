@@ -131,7 +131,7 @@ The signal is the third row. **The interaction, +0.027, is significant.** In wee
 
 In management terms, a response capability **is worth more bought as a set than as separate parts.**
 
-**[Exhibit C]** carries Table 5 and Figure 2.
+**[Exhibit C]** carries Table 5. Figure 2 is not reproduced; the exhibit records only what the paper shows in that figure — consult the original article for the plot itself.
 
 ---
 
@@ -166,7 +166,7 @@ How to interpret this remains open. It may be that when ratings fall the count o
 
 One thing is clear. **The prescription "reply faster when your rating falls" is not supported by this data.** That is not the same as saying it is wrong. It means **this evidence cannot speak to it.** The difference between those two sentences is the most important distinction in this case.
 
-**[Exhibit D]** places Models 3 and 4 side by side, with Figure 3.
+**[Exhibit D]** places Models 3 and 4 side by side. Figure 3 is not reproduced; the exhibit records only what the paper shows in that figure — consult the original article for the plot itself.
 
 ---
 

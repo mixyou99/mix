@@ -312,17 +312,19 @@ function buildTable(headerCells, bodyRows) {
       })],
     })),
   }));
-  // Body rows — keepNext on every row but the last keeps the whole
-  // regression table on one page (R2/D7).
-  bodyRows.forEach((row, ri) => {
+  // Body rows — keepNext on EVERY row, last one included (R2/D7 ②).
+  // 이전 판은 마지막 행만 keepNext 를 뺐다. 그러면 표 내부는 붙지만 표가
+  // **뒤따르는 각주 문단과 떨어진다** — 표 3 각주가 홀로 다음 장에 남는 D-7 ②가
+  // 정확히 그 증상이다. 마지막 행까지 keepNext 를 주어 표와 각주를 한 덩어리로 묶는다.
+  // (표 내부 결합은 cantSplit + 헤더 반복이 이미 담당한다 = D-7 ①)
+  bodyRows.forEach((row) => {
     const padded = [...row];
     while (padded.length < nCols) padded.push('');
-    const notLast = ri < bodyRows.length - 1;
     rows.push(new TableRow({
       cantSplit: true,
       children: padded.slice(0, nCols).map(c => new TableCell({
         width: { size: colW, type: WidthType.DXA },
-        children: [new Paragraph({ children: parseInline(c || ' '), keepNext: notLast })],
+        children: [new Paragraph({ children: parseInline(c || ' '), keepNext: true })],
       })),
     }));
   });
