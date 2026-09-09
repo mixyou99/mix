@@ -24,14 +24,6 @@ PDF 는 `--from pdf` 로 보조 확인용으로만 쓴다.
   않고 **토크나이저를 문맥 인식으로 고쳤다**: 부호는 앞 문자가 줄머리·공백·
   여는 괄호일 때만 인정한다. KR 실측 158건 불변, 미해명 0건 유지.
   ⚠ B·C·D 에서는 음수 계수가 실데이터이므로 이 규칙을 절대 되돌리지 말 것.
-
-  (2026-09-09 등록) 미해명 토큰 보고줄 — E-G7 상세줄이 문맥을 `re.sub(r'\\s+', ...)`
-  로 눌렀다. 원시문자열 안의 `\\s` 는 공백류가 아니라 **역슬래시+s** 를 뜻해 실제로는
-  아무것도 눌리지 않았고, 문맥의 개행이 그대로 남아 보고줄이 쪼개졌다. 게다가 f-string
-  표현부의 역슬래시는 Python 3.12 미만에서 SyntaxError 라 파일 전체가 임포트되지 않았다
-  (3.11 에서 실측). 문맥 압축용 `WS_RE` 를 모듈 상수로 올려 두 결함을 함께 없앴다.
-  판정 로직은 손대지 않았다 — 합격선은 그대로 미해명 0건이다.
-  ⚠ 이 줄은 미해명이 있을 때만 실행되므로 KR 판(미해명 0)에서는 드러나지 않았다.
 ──────────────────────────────────────────────────────────────────────────
 """
 import re, sys, os, zipfile, html, argparse, collections
@@ -89,9 +81,6 @@ def find_tokens(line):
 
 def norm(tok):
     return tok.replace(",", "").replace("\u2212", "-").rstrip(".")
-
-
-WS_RE = re.compile(r"\s+")      # 보고줄용 문맥 압축 — 개행·연속공백을 한 칸으로
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -239,7 +228,7 @@ def g_token_census(text):
 
     det = [f"총 출현 {len(occ)}건 · 팩트표 적중 {sum(hit.values())}건({len(hit)}종) · "
            f"사유 부여 {sum(reasoned.values())}건"]
-    det += [f"미해명 `{n}` — {WS_RE.sub(' ', c)[:70]}" for n, c in unexplained]
+    det += [f"미해명 `{n}` — {re.sub(r'\\s+', ' ', c)[:70]}" for n, c in unexplained]
     return (not unexplained), det, hit
 
 
@@ -338,8 +327,16 @@ def main():
     a = ap.parse_args()
 
     text = load(a.target, a.mode)
-    required = ([l.strip() for l in open(a.required, encoding="utf-8") if l.strip()]
-                if a.required else list(WHITELIST))
+    # ⚠ 결함 정정 (2026-09-09): 주석·빈 줄을 값으로 읽어 "누락 29종"을 보고했다.
+    #    목록 파일은 사람이 읽는 문서이기도 하므로 주석을 허용하고, 값만 취한다.
+    if a.required:
+        required = []
+        for l in open(a.required, encoding="utf-8"):
+            l = l.split("#", 1)[0].strip()
+            if l:
+                required.append(l)
+    else:
+        required = list(WHITELIST)
 
     print(f"# gate_exhibit — {os.path.basename(a.target)}  (from {a.mode})\n")
 
