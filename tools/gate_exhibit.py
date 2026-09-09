@@ -33,6 +33,18 @@ PDF 는 `--from pdf` 로 보조 확인용으로만 쓴다.
   ⚠ 이 줄은 미해명이 있을 때만 실행되므로 미해명 0인 판에서는 드러나지 않는다.
   ⚠ 재등록 사유 — 2026-09-09 반입본에서 이 수리가 되돌아와 있었다(원래 형태로 복귀).
      같은 자리에서 두 번 났으므로 지우지 말 것. 아래 필수목록 파서 정정은 반입본 것이다.
+
+  (2026-09-09 등록) E-G9 오탐 2건 — 실물이 아니라 검사식이 틀렸다(G2′).
+  ① ⚠ 개수를 `txt.count("⚠")` 로 셌다. 표 셀의 `(⚠ 아래)`·`(see ⚠ below)`·`위 ⚠ 참조`
+     같은 **인라인 포인터까지 블록으로 세어** KR/EN 이 갈렸다. E-G9 가 요구하는 것은
+     "⚠ **블록** 수"이므로 **문단 첫 글자가 ⚠ 인 것만** 센다. 포인터는 표 셀 안에 있어
+     문단이 ⚠ 로 시작하지 않으므로 자연히 빠진다.
+  ② 병치 인용 라벨을 `표 1[:：]|본문 4\.1\.1[:：]|Table 1[:：]|§4\.1\.1[:：]` 로 셌다.
+     인용 대상 바로 뒤에 콜론이 오는 형태만 잡혀서, 사이에 서술어가 낀 실제 라벨
+     (`표 1 설명:` · `Table 1 note:` · `§4.1.1 body:` · `4.1.1 본문:`)이 통째로 빠졌다.
+     KR·EN 이 서술어를 다르게 쓰므로 언어별로 누락 수가 달라져 등가 판정이 갈렸다.
+     **인용 대상 + 선택적 서술어 + 콜론** 으로 정규화한다.
+  ⚠ 둘 다 판정 기준(불일치 0)은 그대로다. 자동 정렬은 여전히 하지 않는다.
 ──────────────────────────────────────────────────────────────────────────
 """
 import re, sys, os, zipfile, html, argparse, collections
@@ -51,6 +63,25 @@ def docx_runs(path):
 
 def docx_xml(path):
     return zipfile.ZipFile(path).read("word/document.xml").decode("utf-8")
+
+
+def docx_paragraphs(path):
+    """문단별 텍스트. ⚠ 블록 판정용 — 인라인 포인터를 블록으로 세지 않기 위해 필요하다."""
+    xml = docx_xml(path)
+    out = []
+    for pm in re.finditer(r"<w:p[ >].*?</w:p>", xml, re.S):
+        runs = re.findall(r"<w:t(?:\s[^>]*)?>(.*?)</w:t>", pm.group(), re.S)
+        out.append("".join(html.unescape(r) for r in runs).strip())
+    return out
+
+
+# 병치 인용 라벨 — 인용 대상 + 선택적 서술어 + 콜론.
+# 서술어(설명·본문·note·body)가 낀 형태를 놓치던 결함 정정 (위 이력 ②).
+JUXTA_RE = re.compile(
+    r"(?:표\s*1|Table\s*1|§?\s*4\.1\.1)"
+    r"(?:\s*(?:설명|본문|주석|note|body))?"
+    r"\s*[:：]"
+)
 
 
 def pdf_text(path):
@@ -315,8 +346,8 @@ def g_parity(a_path, b_path, mode):
             "표 개수": len(re.findall(r"<w:tbl[ >]", xml)),
             "행 합계": len(re.findall(r"<w:tr[ >]", xml)),
             "셀 합계": len(re.findall(r"<w:tc[ >]", xml)),
-            "⚠ 블록": txt.count("⚠"),
-            "원문 병치 인용": len(re.findall(r"표 1[:：]|본문 4\.1\.1[:：]|Table 1[:：]|§4\.1\.1[:：]", txt)),
+            "⚠ 블록": sum(1 for q in docx_paragraphs(p) if q.startswith("⚠")),
+            "원문 병치 인용": len(JUXTA_RE.findall(txt)),
         }
     diffs = [k for k in vals["KR"] if vals["KR"][k] != vals["EN"][k]]
     for k in vals["KR"]:
