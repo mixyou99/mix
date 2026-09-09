@@ -277,21 +277,35 @@ REASONS = [
 #    마크다운 잔존이 아니다. **산출물을 고치지 않고 검사식을 좁힌다** (G2′).
 #    → 굵게 마커는 **짝을 이루고 내용을 감싼** 형태(`**텍스트**`)만 위반으로 본다.
 #    B·C·D 는 표마다 범례가 붙으므로 이 예외가 없으면 매 라운드 FAIL 이 난다.
+#
+# ⚠ 보강 (2026-09-09): 위 좁히기가 **너무 좁았다.** 짝 매칭은 홑으로 샌 마커를
+#    구조상 잡지 못한다 — 샌 것은 짝이 없기 때문이다. render_cases.js 의 평면
+#    정규식 파서가 `***`(굵게+이탤릭 닫기)를 처리하지 못해 리터럴 `**` 런 하나가
+#    산출물로 샜고, 짝 검사는 그것을 통과시켰다.
+#    → **범례를 가린 뒤 남은 `*` 를 전부 위반으로 센다. 합격선 0.**
+#       마크다운 마커는 렌더 후 남을 이유가 없다. 범례 예외는 그대로 유지한다.
 STAR_LEGEND = re.compile(r"\*{1,3}\s*p\s*<")
-BOLD_LEFTOVER = re.compile(r"\*\*(?=\S)[^*\n]{1,80}?\*\*")
+BOLD_LEFTOVER = re.compile(r"\*\*(?=\S)[^*\n]{1,80}?\*\*")   # 진단용 — 판정은 아래 전수 셈이 한다
 
 
 def g_literals(text):
     """리터럴·이스케이프 잔존 — 렌더러 결함의 직접 증상."""
     masked = STAR_LEGEND.sub(" ", text)          # 범례 별표를 먼저 가린다
+    stars = masked.count("*")                    # 남은 별표는 전부 위반 (합격선 0)
     bad = {
         "<sub>/<sup> 리터럴": len(re.findall(r"</?su[bp]>", text)),
         "백슬래시": text.count("\\"),
-        "마크다운 굵게 마커(짝)": len(BOLD_LEFTOVER.findall(masked)),
+        "마크다운 별표 잔존": stars,
         "유니코드 첨자·위첨자": sum(text.count(c) for c in "₀₁₂₃₄₅₆₇₈₉ᵢₜⱼ⁰¹²³"),
     }
     hits = {k: v for k, v in bad.items() if v}
-    return (not hits), [f"{k} × {v}" for k, v in hits.items()]
+    det = [f"{k} × {v}" for k, v in hits.items()]
+    if stars:                                     # 어디서 샜는지 보여 준다
+        paired = len(BOLD_LEFTOVER.findall(masked))
+        det.append(f"  그중 짝을 이룬 `**…**` {paired}건 — 나머지는 홑으로 샌 것이다")
+        for mm in list(re.finditer(r"\*+", masked))[:8]:
+            det.append(f"  `{mm.group()}` — {WS_RE.sub(' ', masked[max(0, mm.start() - 40):mm.end() + 40])}")
+    return (not hits), det
 
 
 def g_images(path, mode):

@@ -1,7 +1,7 @@
 # E-G7 재도출 — 숫자 토큰 전수 대조 (KR)
 
-- 입력 실자산: `MBACase_ReviewResponsePlaybook_EXHIBITS_KR.docx` (R2 반영본 · render_cases.js)
-- 추출 경로: `docx_lines`(표 행·문단 단위) → 숫자 `\d[\d,]*(?:\.\d+)?` + 문맥 부호 판정
+- 입력 실자산: `MBACase_ReviewResponsePlaybook_EXHIBITS_KR.docx` (R2 반영본 · render_cases.js · 파서 이식본)
+- 추출 경로: `docx_lines`(표 행·문단 단위) → 숫자 정규식 + 문맥 부호 판정
 - **총 숫자 토큰 출현 191건** · 정규화 후 서로 다른 값 77종
 - 생성: 2026-09-09 · `tools/gate_exhibit.py`
 

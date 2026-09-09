@@ -31,66 +31,103 @@ function unmaskEscapes(s) {
   return s.replace(/[\u0001-\u0004]/g, c => UNESC_MAP[c]);
 }
 
-function parseInline(rawText, opts = {}) {
-  const runs = [];
-  // Guard against undefined
-  if (!rawText) return [new TextRun({ text: '', font: BODY_FONT })];
-  const text = maskEscapes(rawText);
+// ── 인라인 파서 — render_shared.js v6 에서 이식 (2026-09-09) ───────────────
+// 종전의 평면 정규식 `(`...`)|(\*\*...\*\*)|(\*...\*)` 는 중첩을 처리하지 못해
+// `***`(굵게+이탤릭 닫기)에서 리터럴 `**` 를 산출물로 흘렸다. 보강된 E-G0(범례를
+// 가린 뒤 남은 별표 전수)이 그것을 잡아냈다. 짝 매칭으로는 구조상 못 잡는다 —
+// 샌 것은 짝이 없기 때문이다.
+// 규칙은 render_shared.js 헤더의 R1'·R3·R4 그대로다. 렌더 규칙을 새로 만들지
+// 않고 검증된 구현을 그대로 옮긴다. 표 조판(cantSplit·keepNext = D-7)은 이 파일
+// 고유의 몫이므로 그대로 둔다.
+const isWs = c => c === undefined || /\s/.test(c);
 
-  // Tokenize by the three markers. Escape regex-sensitive chars first.
-  // Order: code (backtick) first (opaque), then bold **, then italic *
-  const pattern = /(`[^`]+`)|(\*\*[^*]+\*\*)|(\*[^*\n]+\*)/g;
-
-  let lastIdx = 0;
-  let m;
-  while ((m = pattern.exec(text)) !== null) {
-    if (m.index > lastIdx) {
-      runs.push(new TextRun({
-        text: unmaskEscapes(text.slice(lastIdx, m.index)),
-        font: BODY_FONT,
-        size: opts.size || 22,
-        bold: opts.bold || false,
-        italics: opts.italics || false,
-      }));
-    }
-    const tok = m[0];
-    if (tok.startsWith('`') && tok.endsWith('`')) {
-      runs.push(new TextRun({
-        text: unmaskEscapes(tok.slice(1, -1)),
-        font: CODE_FONT,
-        size: opts.size || 20,
-      }));
-    } else if (tok.startsWith('**')) {
-      runs.push(new TextRun({
-        text: unmaskEscapes(tok.slice(2, -2)),
-        font: BODY_FONT,
-        size: opts.size || 22,
-        bold: true,
-      }));
-    } else if (tok.startsWith('*')) {
-      runs.push(new TextRun({
-        text: unmaskEscapes(tok.slice(1, -1)),
-        font: BODY_FONT,
-        size: opts.size || 22,
-        italics: true,
-      }));
-    }
-    lastIdx = m.index + tok.length;
+function starRuns(s) {
+  const at = new Map(), list = [];
+  for (let i = 0; i < s.length; ) {
+    if (s[i] !== '*') { i++; continue; }
+    let j = i; while (j < s.length && s[j] === '*') j++;
+    const len = j - i;
+    const r = { start: i, end: j, len,
+                canOpen:  len <= 2 && !isWs(s[j]),      // R1' : len>=3 은 열지 못함
+                canClose: !isWs(s[i - 1]) };
+    at.set(i, r); list.push(r); i = j;
   }
-  if (lastIdx < text.length) {
+  // R4: 뒤에 닫을 수 있는 런이 없으면 애초에 열지 않는다(짝 없는 별을 리터럴로 보존)
+  for (let k = 0; k < list.length; k++) {
+    if (!list[k].canOpen) continue;
+    const need = list[k].len;
+    if (!list.slice(k + 1).some(x => x.canClose && x.len >= need)) list[k].canOpen = false;
+  }
+  return at;
+}
+
+function tokenize(text) {
+  const at = starRuns(text);
+  const root = { ch: [] };
+  const stack = [{ node: root, len: 0, kind: null }];
+  let buf = '', i = 0;
+  const top = () => stack[stack.length - 1].node;
+  const flush = () => { if (buf) { top().ch.push({ k: 'text', t: buf }); buf = ''; } };
+
+  while (i < text.length) {
+    if (stack.length === 1 && text[i] === '`') {      // R3: 코드는 최상위에서만
+      const j = text.indexOf('`', i + 1);
+      if (j > i + 1) { flush(); top().ch.push({ k: 'code', t: text.slice(i + 1, j) }); i = j + 1; continue; }
+    }
+    const r = at.get(i);
+    if (r) {
+      let avail = r.len;
+      if (r.canClose) {                                // 안쪽부터 부분소비하며 닫는다
+        while (avail > 0 && stack.length > 1 && stack[stack.length - 1].len <= avail) {
+          flush();                                     // 닫히는 프레임 안으로 먼저 비운다
+          avail -= stack.pop().len;
+        }
+      }
+      if (avail > 0 && r.canOpen) {                    // 남은 별로 연다
+        flush();
+        const len = avail >= 2 ? 2 : 1;
+        const node = { ch: [], kind: len === 2 ? 'bold' : 'italic' };
+        top().ch.push(node);
+        stack.push({ node, len, kind: node.kind });
+        avail -= len;
+      }
+      // 짝 못 찾은 별은 리터럴 — flush 하지 않는다(런이 쪼개져 대조에 허위 차이가 생긴다)
+      if (avail > 0) buf += '*'.repeat(avail);
+      i = r.end; continue;
+    }
+    buf += text[i]; i++;
+  }
+  flush();
+
+  const out = [];
+  (function walk(node, bold, italics) {
+    for (const c of node.ch) {
+      if (c.ch) walk(c, bold || c.kind === 'bold', italics || c.kind === 'italic');
+      else out.push({ k: c.k, t: c.t, bold, italics });
+    }
+  })(root, false, false);
+  return out;
+}
+
+function parseInline(rawText, opts = {}) {
+  if (!rawText) return [new TextRun({ text: '', font: BODY_FONT })];
+  const runs = [];
+  for (const tok of tokenize(maskEscapes(rawText))) {
+    const text = unmaskEscapes(tok.t);
     runs.push(new TextRun({
-      text: unmaskEscapes(text.slice(lastIdx)),
-      font: BODY_FONT,
-      size: opts.size || 22,
-      bold: opts.bold || false,
-      italics: opts.italics || false,
+      text,
+      font: tok.k === 'code' ? CODE_FONT : BODY_FONT,
+      size: opts.size || (tok.k === 'code' ? 20 : 22),
+      bold:    tok.bold    || opts.bold    || false,
+      italics: tok.italics || opts.italics || false,
     }));
   }
   if (runs.length === 0) {
-    runs.push(new TextRun({ text: unmaskEscapes(text), font: BODY_FONT, size: opts.size || 22 }));
+    runs.push(new TextRun({ text: unmaskEscapes(maskEscapes(rawText)), font: BODY_FONT, size: opts.size || 22 }));
   }
   return runs;
 }
+// ── 이식 끝 ────────────────────────────────────────────────────────────────
 
 // ---------- Block-level parser --------------------------------------
 // Reads the markdown and produces a list of docx elements.
