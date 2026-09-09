@@ -45,6 +45,49 @@ PDF 는 `--from pdf` 로 보조 확인용으로만 쓴다.
      KR·EN 이 서술어를 다르게 쓰므로 언어별로 누락 수가 달라져 등가 판정이 갈렸다.
      **인용 대상 + 선택적 서술어 + 콜론** 으로 정규화한다.
   ⚠ 둘 다 판정 기준(불일치 0)은 그대로다. 자동 정렬은 여전히 하지 않는다.
+
+  (2026-09-09 등록) E-G7R 오탐 — `필수 0·1·2 누락` 은 실물이 아니라 검사식 결함이다.
+  세 겹이었다.
+  ① docx 모드의 `load()` 가 런을 전부 공백으로 이어 붙여 **문서 전체가 한 줄**이 됐다.
+     `line_role`(표 행을 알아보는 장치)이 docx 경로에서 한 번도 동작하지 않았다.
+     PDF 경로에만 줄이 있었으므로 이 결함은 docx 로 돌릴 때만 난다.
+  ② `T_ROW` 가 **변수명이 줄머리에 오는 옛 열 구성**을 전제했다. D-5 가 역할 열을
+     앞에 되살리고 D-8 이 행 번호를 붙이면서 표1·표3 행이 둘 다 안 잡히게 됐다.
+     지시된 산출물이 옳고 검사식이 낡은 것이다.
+  ③ 그 결과 표1 최소·최대의 한 자리 값(0·1·2)이 데이터가 아니라 사유 쪽으로 분류돼
+     `hit` 에 들어가지 못했다. D-5 가 설명 열을 되살리면서 `경우 1, 아닐 경우 0` 이
+     같은 행에 들어와 문맥 사유가 먼저 걸린 탓이다.
+  → docx 를 **표 행 단위 · 문단 단위로 줄을 나눠** 읽고(`docx_lines`), `line_role` 의
+     변수명 매칭을 줄머리 고정에서 **줄 안 어디든**으로 푼다. 표1/표3 구분 규칙
+     (음수 부호 없음 + 소수 둘 이상 = 표1)은 그대로 둔다.
+  ⚠ 셀은 공백으로 잇는다 — SEP 규약과 같은 목적(셀 경계 소실로 인한 허위 토큰 방지)이다.
+
+  (2026-09-09 등록) E-G7 미해명 2건 — D-2 가 지시대로 넣은 문자열이 사유 목록에 없었다.
+  ① `4.1` — D-2 의 새 라벨 `패널 구성 (4.1)`. '원고 절 번호' 사유가 이미 있는데
+     정규식이 `4.1은`·`본문 4.1` 같은 옛 형태만 알아 **괄호 형태를 놓쳤다.**
+     EN 은 `(§4.1)` 이라 `§ ?\d` 로 이미 걸렸다 — KR 만 빠지던 언어 비대칭 결함이다.
+  ② `8,731` — D-2 의 ⚠ 한 줄이 요구하는 값. 팩트표에 없는 것이 맞다.
+     35,465 − 26,734 의 **차**를 명시한 것이라 데이터 값이 아니라 사유가 붙어야 할 값이다.
+     그런 범주가 없어 새로 만들었다. **문맥을 D-2 문장으로 좁혀 둔다** — 넓히면
+     아무 숫자나 "차"라고 주장해 빠져나간다.
+  ⚠ 둘 다 화이트리스트는 건드리지 않았다. 팩트표 데이터 값은 그대로 55종이다.
+
+  (2026-09-09 등록) E-G7 EN 미해명 4건 — 사유 정규식이 **한국어 전용**이었다.
+  `(4, 5, 6)`(회귀표 번호)와 `1–5 stars`(별점 척도)는 KR 쪽 `표 \d`·`별점` 에만 걸려
+  EN 에서 통째로 빠졌다. 범주는 이미 옳고 표현만 KR 이었다 — 두 패턴에 EN 형태를 더한다.
+  ⚠ EN 판을 E-G7 에 걸어 본 것이 이번이 처음이라 그때까지 드러나지 않았다.
+     KR 만 돌리면 언어 비대칭 결함은 영원히 안 보인다. P-1 이 두 판을 다 재측정하라는
+     이유가 이것이다.
+
+  (2026-09-09 등록 · 계속) EN 을 돌리자 같은 **KR 전용** 결함이 넷 더 나왔다.
+  ③ `T1_VARS` 가 한국어 변수명뿐이라 **EN 표 행이 line_role 에 하나도 안 잡혔다.**
+     그 탓에 표1 최소값 `2`(누적리뷰수)가 데이터로 인정되지 못해 E-G7R 이 EN 에서만
+     `누락 1종` 을 냈다. EN 변수명을 T1_VARS 에 더한다.
+  ④ '원고 절 번호' 가 `Section 4.1` 을 몰랐다 (KR `4.1은`·`본문 4.1` 만 알았다).
+  ⑤ '표 3 원문 행·열 번호' 가 `Row/column indices` 를 몰랐다 (KR `행·열 번호` 만).
+  ⑥ D-2 차 사유의 문맥이 `removed 8,731\s+\n?observations` 로 지나치게 길어 문맥창
+     (±45자)을 넘겼다. `removed 8,731` 로 줄인다.
+  ⚠ 넷 다 범주는 이미 옳고 표현만 KR 이었다. 판정 기준·화이트리스트는 불변이다.
 ──────────────────────────────────────────────────────────────────────────
 """
 import re, sys, os, zipfile, html, argparse, collections
@@ -63,6 +106,26 @@ def docx_runs(path):
 
 def docx_xml(path):
     return zipfile.ZipFile(path).read("word/document.xml").decode("utf-8")
+
+
+def docx_lines(path):
+    """표는 **행 하나가 한 줄**, 그 밖은 문단 하나가 한 줄. `line_role` 이 표 행을
+    알아보려면 줄 경계가 있어야 한다 — docx 를 통째로 한 줄로 읽던 결함 정정."""
+    xml = docx_xml(path)
+    spans, out = [], []
+    for tm in re.finditer(r"<w:tbl>.*?</w:tbl>", xml, re.S):
+        spans.append(tm.span())
+        for rm in re.finditer(r"<w:tr[ >].*?</w:tr>", tm.group(), re.S):
+            cells = [" ".join(html.unescape(t) for t in
+                              re.findall(r"<w:t(?:\s[^>]*)?>(.*?)</w:t>", cm.group(), re.S))
+                     for cm in re.finditer(r"<w:tc>.*?</w:tc>", rm.group(), re.S)]
+            out.append((tm.start() + rm.start(), " ".join(c for c in cells if c).strip()))
+    for pm in re.finditer(r"<w:p[ >].*?</w:p>", xml, re.S):
+        if any(a <= pm.start() < b for a, b in spans):
+            continue
+        runs = re.findall(r"<w:t(?:\s[^>]*)?>(.*?)</w:t>", pm.group(), re.S)
+        out.append((pm.start(), "".join(html.unescape(r) for r in runs).strip()))
+    return [t for _, t in sorted(out) if t]
 
 
 def docx_paragraphs(path):
@@ -93,9 +156,8 @@ def pdf_text(path):
 def load(path, mode):
     if mode == "pdf":
         return pdf_text(path).replace("\x0c", "\n")
-    raw = docx_runs(path)
-    # 내용 비교용: 구분자를 공백으로. 경계가 필요한 검사는 raw 를 따로 쓴다.
-    return raw.replace(SEP, " ")
+    # 표 행·문단 단위로 줄을 나눠 돌려준다. 통째로 한 줄로 주면 line_role 이 죽는다.
+    return "\n".join(docx_lines(path))
 
 
 # ══════════════════════════════════════════════════════════════════════
@@ -155,15 +217,28 @@ WHITELIST = {
 }
 
 T1_VARS = ("리뷰수", "답변수", "답변속도", "고객평점하락", "누적리뷰수", "코로나확진자")
-T_ROW = re.compile(r"^\s*(" + "|".join(T1_VARS) + r"|고객평점|누적리뷰|코로나확)\s+[−\-\d]")
+# EN 판 변수명 — 없으면 EN 표 행이 line_role 에 하나도 안 잡힌다(위 이력 ③).
+T1_VARS_EN = ("review_count", "reply_count", "reply_speed", "rating_decline",
+              "cumulative_reviews", "COVID_cases")
+# 줄머리 고정을 푼다 — D-5 가 역할 열을, D-8 이 행 번호를 앞에 붙여 변수명이 더는 줄머리가 아니다.
+# 대신 표 행임을 **구조로** 확인한다(아래 line_role). 변수명만으로 잡으면 산문까지 표 행이 된다.
+T_ROW  = re.compile("|".join(T1_VARS + T1_VARS_EN) + r"|고객평점|누적리뷰|코로나확")
+T1_N   = "26,734"                       # 표1은 전 행에 N 열이 있다
+T3_IDX = re.compile(r"\(\d\)")           # 표3은 행 번호가 붙는다 (D-8)
+DECIMAL = re.compile(r"\d\.\d")
 T2_ROW = re.compile(r"^\s*(14,688|12,046)")
 
 
 def line_role(ln):
-    if T2_ROW.match(ln):
+    """표 행만 표 행으로 판정한다. 변수명이 나온다고 표 행인 것은 아니다."""
+    if T2_ROW.search(ln):
         return "표2"
-    if T_ROW.match(ln):
-        return "표1" if ("−" not in ln and ln.count(".") >= 2) else "표3"
+    if not T_ROW.search(ln):
+        return None
+    if T1_N in ln:                                  # 표1 — N 열이 전 행에 인쇄된다
+        return "표1"
+    if T3_IDX.search(ln) and DECIMAL.search(ln):    # 표3 — 행 번호 + 상관계수
+        return "표3"
     return None
 
 
@@ -175,16 +250,20 @@ REASONS = [
     ("서지 — 권(호)·연도·페이지·DOI", _ctx(r"경영정보학연구|DOI|pp\.|isr\.2022|Journal|Vol")),
     ("원고 도판 번호", _ctx(r"그림|Figure")),
     ("유의수준 범례", _ctx(r"p\s*<")),
-    ("원고 절 번호", _ctx(r"4\.1\.1|4\.1은|5\.3|본문 4\.1|§\d|§ ?\d")),
-    ("원고 표 번호", _ctx(r"표 \d|<표|Table \d")),
+    # 괄호 형태 `(4.1)`·`(4.1.1 …)` 추가 — D-2 라벨. EN 은 `(§4.1)` 이라 이미 걸렸다.
+    ("원고 절 번호", _ctx(r"4\.1\.1|4\.1은|5\.3|본문 4\.1|§\d|§ ?\d|\(4\.1[.\d]*|[Ss]ection 4\.1")),
+    # 팩트표 두 값의 차를 명시한 것 — D-2 ⚠ (35,465 − 26,734 = 8,731).
+    # 문맥은 D-2 문장으로 좁혀 둔다. 일반화하면 검사가 무력해진다.
+    ("팩트표 값의 차 (D-2 ⚠)", _ctx(r"줄어든 규칙은 원고에 없다|removed 8,731|8,731\s*개가 줄어든")),
+    ("원고 표 번호", _ctx(r"표 \d|<표|[Tt]ables? \d|[Tt]ables? \(\d")),
     ("시차 표기 (t−1 · t−2)", _ctx(r"t[−\-]\d")),
     ("모형 계수 첨자", _ctx(r"[βb]\d|=\s*[βb]\d")),
     ("이변량 코딩값 (0/1)", _ctx(r"이변량|경우 1|경우 0|=0\)|=1\)|0/1|binary")),
     ("질병명 표기", _ctx(r"코로나19|COVID-19")),
     ("선행연구 인용 연도", _ctx(r"et al\.")),
-    ("표 3 원문 행·열 번호", _ctx(r"\(\d\)|행·열 번호|column numbers")),
+    ("표 3 원문 행·열 번호", _ctx(r"\(\d\)|행·열 번호|column numbers|[Rr]ow/column indices")),
     ("역수 정의식의 상수 +1", _ctx(r"평균 일수 \+ 1|÷ \(부정적|average number of days")),
-    ("별점 척도 1–5", _ctx(r"별점|star rating")),
+    ("별점 척도 1–5", _ctx(r"별점|star rating|stars")),
     ("날짜 구성요소", _ctx(r"2021-")),
 ]
 

@@ -10,3 +10,6 @@ work/source/*.pdf
 
 # work/ 의 docx 는 이 라운드의 입력이다 — 위 *.docx 규칙(무관한 앱에서 온 것)에서 제외
 !work/**/*.docx
+
+# npm 설치본 — 렌더러 의존(docx 9.7.1). 커밋하지 않는다
+node_modules/
