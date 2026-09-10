@@ -131,6 +131,31 @@ P1 회수 필터(`.md·.csv·.js·.py`)에 걸려 빠졌고, **P2 렌더 꾸러�
 - 부수 열린 항목: 매핑 §1 의 주차별 셈(121)이 실물(112)보다 9건 많다. 회수 누락인지 셈 방식 차이인지 미확인
 
 
+## Wk10 군집 덱 개정 — 계획 확정 대기 (2026-09-10)
+*계획서 `docs/rounds/KMB689_Wk10_deck_plan.md`. **계획만 냈다. 저작은 승인 후.***
+
+BUSS256 `Seminars 10-11_Clustering_Lecture_Inclass2_25F` **64장 전수 판정**:
+**그대로 6 · 재배치 7 · 개정 13 · 삭제 38** → 새 1블록 덱 **35장**(재사용 19 + 신규 16), 세션 전체 ≈ 43장.
+
+**실측이 뒤집은 전제 둘** — 승인 요청 §7 에 올렸다.
+1. **포크 선택이 이 세션에서는 쟁점이 아니다.** BUSS256 64 − KMB689 54 = 10장인데 전부 쪽수다
+   (리뷰 반복 8 + 리뷰 구역표지 1 + 빈 슬라이드 2 − KMB689 고유 2 + BUSS256 고유 1).
+   **진짜 내용 차이는 양쪽 한 장씩.** 덜어낼 '학부 실습'도 덱 안엔 두 장뿐(나머지는 별도 Exercise 파일).
+2. **신규 저작은 DBSCAN 하나가 아니라 둘이다.** `dbscan·density·noise·core·border·epsilon·minPts`
+   전수 검색 **0건** — 청사진 1.3 은 전량 신규가 맞다. 그런데 **군집 프로파일(정의 변수) 읽기 슬라이드도
+   두 덱 어디에도 없다** (`centroid` 는 군집 간 거리 측정법으로만 등장). 청사진은 1.2 를
+   "fork M-4(프로파일 읽기)" 로 적었으나 포크할 원본이 없다 → **1.2 에도 신규 1장(N4) 필요.**
+   N4 와 검증 5문(N14)이 2블록 워크시트가 1:1 로 되돌아오는 두 축이다.
+
+**매핑 §3 의 진단은 실측으로 확인됐다** — 검증·해석·안정성이 기존 덱 **61~64장(마지막 6%)** 에 몰려 있다.
+새 구조에서 **1.4+1.5 = 30분(1블록의 40%)** 으로 올라온다. 여기에 50장(*"개수 결정에 이론이 없다"*)과
+60장(*"모든 점을 억지로 배정한다"*)이 합류해 각각 파라미터 임의성·잡음의 존재 이유를 떠받친다.
+
+**⚠ 도판 실측 정정** — 부재 도판을 `figC_dbscan_clusters_EN.png` 한 개로 잡으셨으나, 자료가 참조하는
+경로는 **셋**이다(`_EN` · `_STUDENT_EN` · `_INSTRUCTOR_EN`). 청사진이 확정한 것은 첫 번째뿐이다.
+P2 회수 시 세 파일을 모두 확인해야 한다.
+
+
 ## Three curriculum decisions — APPLIED
 1. **ReviewShield = MBA MIS ONLY.** Removed from the Big-Data technique slots; tagged **MIS-lens only** (platform
    trust / governance / game-theoretic modeling — not a data-analytics-technique case). *(Resolves the prior
