@@ -13,6 +13,13 @@ cluster as size + profile and find high-z variables. It does **not** disclose th
 returns only as questions ① and ③ in §1.5, so students can discover the trap in Block 2. The three figure variants
 remain subject to P2 identity/content verification before authoring.
 
+**Sep 10, 2026 — DBSCAN independently reproduced.** Source `snsdata.csv` md5
+`b0f38d40a0f4b980de4c0c4b1cb091d2`, 27,276 rows, 36 interest variables, `StandardScaler` (population
+mean/standard deviation, ddof=0), then scikit-learn DBSCAN `eps=3.0`, `min_samples=25`, `ball_tree`.
+Result: C0 19,241 · C1 258 · C2 87 · C3 294 · C4 47 · noise **7,349 = 26.943100%** (26.9% to one
+decimal). The figure-generation crop removes **3,113 of those 7,349 noise points** and leaves 4,236 visible.
+The prior `3,852` crop count was stale and is superseded by this reproduction.
+
 > ## ✅ PATH RESOLVED — Option A executed (real DBSCAN on snsdata)
 > The SmartSearch brief's DBSCAN was only a **binary dense/non-dense** preprocessing label (no clusters/profiles/
 > noise/parameters — insufficient; see prior version), and TwoSentencePitch is **hierarchical, no noise trap,
@@ -144,10 +151,11 @@ is interpretation + noise.)*
 | 5 | **Discussion prompts (KR)** | Noise/blob customers; targeting; parameter-sensitivity; no-causal-from-segmentation. |
 | 6 | **Instructor demo script (KR)** | 2.2 walk; names the **noise-omission** + C0 over-naming; lure line **"자신 있는 군집 이름·개수에 속지 말고, 실제 프로파일과 잡음으로 돌아가라."** Worksheet↔checklist number line. |
 
-**Rendered figure — CONFIRMED (re-scaled Jul 5):** `MBA_S10_figures/figC_dbscan_clusters_EN.png` (rendered, English).
-Axes are **fit to the cluster structure** (X≈[−2.0, 1.5], Y≈[−2.6, 3.0]); **3,852 extreme noise points are cropped
-for readability and annotated on-plot** ("...cropped, still counted in the 26.9%"), so the **noise share stays
-honest** (the legend states the true **26.9%**, counting all noise incl. cropped). Cropping choice = **(b) crop +
+**Rendered figure — numeric content reproduced; P2 file identity pending:** `MBA_S10_figures/figC_dbscan_clusters_EN.png`
+(rendered, English). Axes are **fit to the cluster structure** (X≈[−2.0, 1.5], Y≈[−2.6, 3.0]); **3,113 of the
+7,349 noise points are cropped** for readability and 4,236 remain visible. The crop count is annotated on-plot
+("...cropped, still counted in the 26.9%"), so the **noise share stays honest** (exact 26.943100%, shown as
+**26.9%**, counting all noise incl. cropped). Cropping choice = **(b) crop +
 caption note** — cleaner than letting a handful of far outliers compress everything into a corner. After
 re-scaling, the pockets are **distinguishable by region** (C1 fashion = bottom, C2 faith = top, C3 band = upper-
 left; **C4 overlaps C3**, honestly showing the duplicate), though they **still overlap the grey C0 majority** — an
@@ -158,6 +166,12 @@ inherent limit of projecting a 36-dim result to 2D.
 > **Step-2 note (lecture + demo must state):** the scatter is a **2D projection of a 36-dim clustering**, so
 > visual overlap in 2D ≠ "same cluster" — the **profiles** decide.
 Wk9 standard met (axis labels/units, source line, legend firm background). **Net: 6 materials + 1 figure.**
+
+**Figure routing measured (2026-09-10):** the split student AI Exhibit names
+`figC_dbscan_clusters_STUDENT_EN.png`; the split instructor AI Exhibit names
+`figC_dbscan_clusters_INSTRUCTOR_EN.png`; the pre-split draft Exhibit names `figC_dbscan_clusters_EN.png`.
+The Case Handout, Verification Worksheet, and Block-1 Lecture Notes name no figure file. Therefore the
+**Block-1 figure variant is not specified**. P2 verification remains required for the three figure files themselves.
 
 ## 6. TIME RECONCILIATION
 - Block 1 = 10+20+15+15+15 = **75 ✓** · Block 2 = 15+20+20+15+5 = **75 ✓** · +10 break = **2h40m ✓.**
