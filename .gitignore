@@ -8,9 +8,13 @@ __pycache__/
 # 원 논문 — 배포권 문제. 경로·해시만 기록한다
 work/source/*.pdf
 
-# work/ · cases/ 의 docx 는 케이스 산출물이다 — 위 *.docx 규칙(무관한 앱에서 온 것)에서 제외
+# work/ · cases/ · 03_final 의 docx 는 케이스 산출물이다 — 위 *.docx 규칙(무관한 앱에서 온 것)에서 제외.
+# ⚠ 위 두 줄만 있을 때 03_final 승격분이 통째로 무시됐다 (2026-09-10). `/` 를 품은 패턴은
+#    .gitignore 가 있는 디렉터리에 고정되므로 `cases/**` 는 **최상단 cases/ 만** 가리킨다.
+#    승격 목적지는 teaching/KMB689/03_final/cases/ 라 걸리지 않았다. 경로 무관 규칙을 함께 둔다.
 !work/**/*.docx
 !cases/**/*.docx
+!**/03_final/**/*.docx
 
 # npm 설치본 — 렌더러 의존(docx 9.7.1). 커밋하지 않는다
 node_modules/

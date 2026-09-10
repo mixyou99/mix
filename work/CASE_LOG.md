@@ -93,6 +93,22 @@ authored or altered — organization + logging only.** Source of every case = **
 | PrivacyLabelsUtilization | student/: FULL_KR·EN (본문 §1–10), EXHIBITS_KR·EN (A–E), EXHIBITS_F_KR·EN (별지 F·학생 실습·임원 제외) · instructor/: TeachingNote_KR·EN · reference/: brief_KR·EN | V1 분리·V1c 내용분리·V2 해시 20/20·V3 12/4/4·V4 강사표기·V5 T8′ 교차오염 0 (2026-08-24) · **이스케이프 정정 재승격 (2026-08-26)** — D-G1~D-G6 전항 PASS, 숫자값 무변경 | ✅ 게재 완료 — 경영정보학연구(Information Systems Review) 27(1), 2025.2, DOI 10.14329/isr.2025.27.1.075 |
 | PrivacyLabelsMinimization | student/: FULL_KR·EN (본문 §1–10), EXHIBITS_KR·EN (A–E), EXHIBITS_F_KR·EN (별지 F·학생 실습·임원 제외) · instructor/: TeachingNote_KR·EN · reference/: brief_KR·EN | V1 분리·V1c 내용분리·V2 해시 20/20·V3 12/4/4·V4 강사표기+심사중표기·V5 G2′ 교차오염 0 (2026-08-25) · **이스케이프 정정 재승격 (2026-08-26)** — D-G1~D-G6 전항 PASS, 숫자값 무변경 · **인라인 파서 정정 재승격 (2026-08-26)** — E-5b 미용 결함 2종, 숫자·유의도 무변경 | ☐ POM 심사 중 — 외부 인용 전 재확인 |
 
+| ReviewResponsePlaybook | student/: FULL_KR·EN (본문 §1–10), EXHIBITS_KR·EN (A–E), EXHIBITS_F_KR·EN (별지 F·학생 실습·문제만) · instructor/: TEACHINGNOTE_KR·EN (교원 노트 ①~⑧) · reference/: **미반입** | V1 분리 0위반(03_final 전역)·V2 해시 8/8·V3 0위반 · 교원 노트 게이트 `--kind supplement` KR 7/7·EN 7/7 (E-G4S 표 0개 · **E-G7 팩트표 적중 0건** · E-G9 등가) · 렌더러 회귀 0 (2026-09-10) | ☐ 게재 논문 수치 전재 — 인용 전 `SOURCE_IDENTITY.md` 의 정본 확인 |
+- **ReviewResponsePlaybook 교원 노트 (2026-09-10)** — 범위 ①~⑧. **원고 표를 다시 싣지 않는다**(Exhibit 을 가리킨다).
+  게이트가 물리적으로 확인한다 — E-G4S 표 0개 · **E-G7 팩트표 적중 0건**(원고 값이 하나도 인쇄되지 않았다).
+  **별지 F 모범답안 없음** — 채점 관점만으로 채점 가능하게 썼다.
+  ⑦ 에 (d) **"둘 중 하나가 오타"로 정리해 버리는 오독**을 넣고 ③ 과 짝지었다 — *교수자가 답을 주면 이 재료가 죽는다.*
+  ⑧ 은 **"이 케이스는 원고를 비판하는 자료가 아니다"** 를 첫 문장에 두고, 기울 때의 신호 넷과 잡는 방법 넷을 적었다.
+  한계 서술은 **원고 5.3 이 스스로 밝힌 넷의 범위를 넘지 않으며**, 5.3 에 없는 것(③ 의 넷·§9 의 식별 질문)은
+  "원고가 인정한 한계" 가 아니라 "원고에 적힌 대로의 사실" 로 갈랐다. 상세 → `docs/rounds/ReviewResponsePlaybook_promotion.md`
+  - ⚠ **E-G7 사각지대가 실제로 발현했다** — `1블록`·`2블록` 의 1·2 가 표 1 최대값·누적리뷰수 최소값으로 **오귀속된 채 통과**했다.
+    한 자리 토큰은 REASONS 가 화이트리스트보다 먼저 도므로 사유를 등록해 잡았다(순서는 바꾸지 않았다). 고친 뒤 적중 0건.
+  - ⚠ **E-G8 사유표 초안에서 오귀속 11건을 눈으로 잡았다.** 그중 하나는 EN 의 `None of the six` 안 `one of the six` 에 걸린 것이고
+    같은 문장의 KR 판은 바르게 붙었다 — **한 판만 돌리면 드러나지 않는 종류**다(R2 의 교훈이 재현됐다).
+  - ⚠ **내가 좁게 구현한 V3 규칙 둘을 되돌렸다** — 03_final 최상단을 `student`·`instructor` 둘로 못 박은 것과 전체를 markdown
+    전용으로 본 것. 케이스는 `03_final/cases/<case>/` 에 docx 로 간다. V1 은 03_final 전역으로 확대했다.
+- **아직 없는 것** — `reference/brief_KR·EN`(`Research_Cases.zip` 의 `Old_Case/` · 미반입. 없는 것은 승격할 수 없다) ·
+  임원 60분 대본 · 1장 요약 슬라이드(범위 ①~⑧ 밖).
 - **배포 규칙**: 학생 배포 = `student/`(본문+Exhibit; F는 문제만). 임원 세미나 배포 = Exhibit F 제외(Exhibit 세트 머리말 명시), 교원 노트·brief 미배포. Exhibit 정답 해설과 **F 심긴 오류의 정답 공개 문장("심긴 오류는 발행처명 **Halden→Holden**")** 은 `instructor/` 전용.
   - ⚠ **두 철자쌍을 혼동하지 말 것** (2026-08-26 실측 정정 — 이 줄에 de-conflict 이전 값이 남아 있었다):
     **`Halden→Holden`** = 별지 F의 심긴 오류. 문제지(`EXHIBITS_F_KR·EN`)에는 송장 `Halden` ↔ AI 추출 `Holden`이
@@ -206,7 +222,7 @@ professor marks `Citable?`.*
 | TwitchGovernance | ✅ | '720p로 강등된 스트리머': 플랫폼 비용 통제는 누구를 다치게 하는가 | Regression (+ MIS-lens) | ☐ |
 | BikeShareEqualizer | ✅ | 따릉이는 골목 상권을 살리는가? | Regression | ☐ |
 | AppUpdateTiming | ✅ | 타이밍의 기술: 앱을 언제 업데이트/할인할 것인가 | Regression | ☐ |
-| ReviewResponsePlaybook | ✅ | 리뷰에 답할 것인가, 어떻게 답할 것인가 | Regression · **R2 + B·C·D·F 통과 → `cases/ReviewResponsePlaybook/student/`** (FULL_KR·EN + EXHIBITS_KR·EN(A–E) + EXHIBITS_F_KR·EN(별지), docx 6종). 교원 노트 미저작 · `03_final` 승격 가능 | ☐ |
+| ReviewResponsePlaybook | ✅ | 리뷰에 답할 것인가, 어떻게 답할 것인가 | Regression · **R2 + B·C·D·F + 교원 노트 통과 → `03_final/cases/ReviewResponsePlaybook/` 승격 완료** (student docx 6종 + instructor docx 2종 = 8건, md5 8/8 동일) | ☐ |
 | PrivacyLabelsMinimization | ✅ | 데이터를 "덜 모으겠다"는 선언이 앱을 오래 살아남게 하는가 | Regression (+ MIS-lens) · **풀 케이스 → 03_final** | ☐ |
 | PrivacyLabelsUtilization | ✅ | 프라이버시 영양 라벨의 시대: 데이터를 얼마나·어떻게 쓸 것인가 | Regression (+ MIS-lens) · **풀 케이스 → 03_final** | ✅ |
 | WebtoonParadox | ✅ | 웹툰 개인화의 역설: 발견의 이점이 예측의 리스크로 | **Experiment (RCT)** — in regression session | ☐ |

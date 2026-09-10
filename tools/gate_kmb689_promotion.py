@@ -124,13 +124,17 @@ def promote(src_root: Path, existing: Path, dst: Path, apply: bool):
 
 # ── 검증 ─────────────────────────────────────────────────────────────────────
 def v1(dst: Path):
+    """학생/교원 물리 분리. 03_final **전역**의 모든 student·instructor 폴더를 본다 —
+    세션 자료(최상단)와 케이스 승격분(`cases/<case>/`)이 같은 규칙 아래 있다."""
     bad = []
-    for p in sorted((dst / "student").glob("*.md")):
-        if INSTRUCTOR_TOKEN.search(p.name):
-            bad.append(("student 에 교원 파일", p))
-    for p in sorted((dst / "instructor").glob("*.md")):
-        if STUDENT_TOKEN.search(p.name):
-            bad.append(("instructor 에 학생 파일", p))
+    for d in sorted(dst.rglob("student")):
+        for p in sorted(d.iterdir()):
+            if p.is_file() and INSTRUCTOR_TOKEN.search(p.name):
+                bad.append(("student 에 교원 파일", p))
+    for d in sorted(dst.rglob("instructor")):
+        for p in sorted(d.iterdir()):
+            if p.is_file() and STUDENT_TOKEN.search(p.name):
+                bad.append(("instructor 에 학생 파일", p))
     return bad
 
 def v2(plan):
@@ -148,11 +152,22 @@ def v3(dst: Path):
     bad = []
     for p in sorted(dst.rglob("*")):
         if p.is_dir():
-            if p.parent == dst and p.name not in ("student", "instructor"):
+            # ⚠ 정정 (2026-09-10): 초판은 03_final 최상단을 student·instructor 둘로 못 박았다.
+            #    **틀렸다.** CASE_LOG 가 기록한 대로 풀 케이스 승격은
+            #    `03_final/cases/<case>/` 로 간다 — 세 케이스가 이미 그 자리에 있다.
+            #    교수님이 정하신 V3 는 "reports·scripts·drafts·archive·blueprint 0건" 이고
+            #    최상단 디렉터리 수를 정한 적이 없다. 내가 좁게 구현한 것이라 되돌린다.
+            if p.parent == dst and p.name not in ("student", "instructor", "cases"):
                 bad.append(("예상 밖 디렉터리", p))
             continue
-        if p.suffix.lower() != ".md":
-            bad.append(("markdown 아닌 파일", p))
+        # ⚠ 정정 (2026-09-10): 초판은 03_final 전체를 markdown 전용으로 못 박았다.
+        #    **틀렸다.** 그 규칙은 세션 자료에만 해당한다 — 교수 판정 (나)로 md 먼저
+        #    올렸기 때문이다. 케이스 승격분(`cases/<case>/`)은 애초에 배포 형태(docx)만
+        #    두는 것이 규약이고(`cases/…/README.md`), 2026-08 시험 자산도 3형식이었다.
+        #    그래서 확장자 제한은 **세션 자료 쪽에만** 건다.
+        in_cases = "cases" in p.relative_to(dst).parts
+        if not in_cases and p.suffix.lower() != ".md":
+            bad.append(("세션 자료에 markdown 아닌 파일", p))
         if EXCLUDE.search(p.name):
             bad.append(("제외 대상이 승격됨", p))
     return bad
@@ -181,6 +196,8 @@ def main():
     ap.add_argument("--inputs", required=True, help="deck_inputs 루트")
     ap.add_argument("--dst", required=True, help="03_final 루트")
     ap.add_argument("--apply", action="store_true", help="실제로 복사한다")
+    ap.add_argument("--verify", action="store_true",
+                    help="복사하지 않고 이미 승격된 트리에 V1·V2·V3 만 다시 건다")
     ap.add_argument("--control", action="store_true",
                     help="대조군: instructor/ 에도 같은 주사를 걸어 검사의 판별력을 확인한다")
     a = ap.parse_args()
@@ -189,7 +206,7 @@ def main():
     src_root = inputs / "promotion_source"
     existing = src_root / "_existing_03_final"
 
-    plan = promote(src_root, existing, dst, a.apply)
+    plan = promote(src_root, existing, dst, a.apply and not a.verify)
     if plan is None:
         sys.exit(2)
 
@@ -198,7 +215,7 @@ def main():
     ns = sum(1 for _, _, d in plan if d.parent.name == "student")
     ni = sum(1 for _, _, d in plan if d.parent.name == "instructor")
     print(f"계획 — 기존 {n_ex} · 승격 {n_pr} · 합 {len(plan)}   (student {ns} · instructor {ni})")
-    if not a.apply:
+    if not (a.apply or a.verify):
         print("(예행. --apply 로 실행한다)")
         return
 
