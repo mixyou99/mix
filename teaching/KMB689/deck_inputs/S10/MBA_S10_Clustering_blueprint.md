@@ -11,7 +11,10 @@ figures (§8.9); two **75-min blocks** + 10-min break.*
 profile reading is corrected from `fork M-4` to **신규 — 포크 원본 부재**. N4 teaches only how to read a
 cluster as size + profile and find high-z variables. It does **not** disclose the C0 verdict. The all-z≈0 issue
 returns only as questions ① and ③ in §1.5, so students can discover the trap in Block 2. The three figure variants
-remain subject to P2 identity/content verification before authoring.
+remain subject to P2 identity/content verification. **Block 1 uses none of the three result figures and uses only
+the new N6 core/border/noise concept diagram.** The result figures are a Block-2 AI Exhibit student/instructor
+split with no Block-1 designation. The base/instructor figures disclose 26.9% and the crop count, conflicting with
+the Block-1 C0-answer ban; previewing the student figure would also remove its first-seen counting task in Block 2.
 
 **Sep 10, 2026 — DBSCAN independently reproduced.** Source `snsdata.csv` md5
 `b0f38d40a0f4b980de4c0c4b1cb091d2`, 27,276 rows, 36 interest variables, `StandardScaler` (population
@@ -170,8 +173,12 @@ Wk9 standard met (axis labels/units, source line, legend firm background). **Net
 **Figure routing measured (2026-09-10):** the split student AI Exhibit names
 `figC_dbscan_clusters_STUDENT_EN.png`; the split instructor AI Exhibit names
 `figC_dbscan_clusters_INSTRUCTOR_EN.png`; the pre-split draft Exhibit names `figC_dbscan_clusters_EN.png`.
-The Case Handout, Verification Worksheet, and Block-1 Lecture Notes name no figure file. Therefore the
-**Block-1 figure variant is not specified**. P2 verification remains required for the three figure files themselves.
+These are Block-2 Exhibit assets; Case Handout, Verification Worksheet, and Block-1 Lecture Notes specify no
+result figure. **Final Block-1 decision: include none of the three result figures; use only the editable N6
+core/border/noise concept diagram.** The base/instructor variants reveal `26.9%` and the crop count too early,
+while showing the student variant before Block 2 would turn its first encounter and counting task into a repeat.
+The Case Handout, Verification Worksheet, and Block-1 Lecture Notes name no figure file. P2 verification remains
+required for the three figure files themselves, but is not a Block-1 authoring dependency.
 
 ## 6. TIME RECONCILIATION
 - Block 1 = 10+20+15+15+15 = **75 ✓** · Block 2 = 15+20+20+15+5 = **75 ✓** · +10 break = **2h40m ✓.**

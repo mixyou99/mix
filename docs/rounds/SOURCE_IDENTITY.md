@@ -34,6 +34,18 @@ E-G7 도 E-G9 도 통과한다. 3번은 실제로 그렇게 통과할 뻔했다 
 원 논문 PDF 는 **배포권 문제로 커밋하지 않는다**(`.gitignore: work/source/*.pdf`).
 경로·크기·md5 만 기록한다. 사라지면 위 md5 로 같은 파일인지 확인하고 다시 채운다.
 
+### S10 군집 재현 데이터 — 동명 CSV 두 개를 구분한다
+
+| 파일 | md5 | 크기 · 행수 | 정체 · 사용 규칙 |
+|---|---|---|---|
+| BUSS256 `Seminar 10-11 Clustering/Exercise/snsdata.csv` | `b0f38d40a0f4b980de4c0c4b1cb091d2` | 2,461,306 B · 헤더 포함 27,277줄(데이터 27,276행) | **DBSCAN 재현 정본.** 목표 BUSS256 Exercise 자료와 직접 짝인 파일이다 |
+| KMB689 `Seminar 10 Clustering/Exercise/snsdata.csv` | `d3c29862fb1ecffbe405a4af887d7564` | 2,461,306 B · 헤더 포함 27,277줄(데이터 27,276행) | **동명 비정본.** `gradyear`가 BUSS256판보다 전건 12년 이동했다. DBSCAN 입력 관심사 36열 배열은 전건 동일하지만 출처 식별에는 쓰지 않는다 |
+
+두 파일의 관심사 36열은 행 순서까지 전건 동일하므로 현재 DBSCAN 입력과 결과는 같지만, 파일 전체의
+정체는 같지 않다. 동명 파일이 함께 있다는 사실 자체가 다음 세션에서 잘못된 판을 잡을 위험이다. Wk10
+DBSCAN은 반드시 BUSS256 Exercise판의 md5를 먼저 확인하고 사용한다. 재현 조건은 관심사 36열,
+`StandardScaler(ddof=0)`, scikit-learn 1.7.2, `eps=3.0`, `min_samples=25`, `ball_tree`다.
+
 ## 2 · 정본이 아닌 사본 — 대조에 쓰지 말 것
 
 ### `24-3-01 송민기 서희진 이건웅(1-21)_교정본.pdf` (Dropbox)
