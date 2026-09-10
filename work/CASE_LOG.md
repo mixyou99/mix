@@ -104,6 +104,33 @@ authored or altered — organization + logging only.** Source of every case = **
 - **아키텍처(R1)**: 계층형 단일 케이스 — 별도 임원본 없음(임원 60분 대본 + 1장 요약 슬라이드 = 교원 노트 부록).
 
 
+## Session-material promotions — 03_final (KMB689 16주)
+*세션 자료 승격 = 강의실 배포용 `03_final/{student,instructor}/` 로 바이트 동일 복사.
+케이스 승격(`03_final/cases/<case>/`)과 별개 트리다.*
+
+| 승격 | 대상 | 형식 | 검증 | 완결 |
+|---|---|---|---|---|
+| 2026-08 | 시험 자산 6종 (Wk7 중간·Wk15 복습·Wk16 기말) | md·docx·pdf | — | ✅ |
+| **2026-09-10** | **세션 자료 13주치 112건** (Wk1–6 · Wk8–13 · Wk14) | **md 만** | V1 분리 0위반 · V2 해시 118/118 · V3 구조 0위반 · 보조 내용주사 학생 0건/대조군 14건 | **❌ 미완결** |
+
+- **03_final 총계 118건** — student 61 · instructor 57. 기존 시험 자산 6종은 덮지 않았다(파일명 교집합 0).
+- 배분 규칙: 파일명 `KEY|INSTRUCTOR`(대소문자 무시) → `instructor/`, 그 밖 → `student/`.
+  꾸러미가 이미 갈라 놓은 네 주차(Wk1·2·6·14)에 먼저 걸어 **불일치 0건**으로 검증한 뒤 평면 네 주차에 적용했다.
+- 승격 제외: `blueprint · report · draft · archive · audit · scoping · design_plan · canon · outline` — 03_final 에 **0건**.
+  분리 전 원본 3종(`MBA_S10_*_KR.md`)도 저작 이력이므로 제외했다.
+- 스크립트 `tools/gate_kmb689_promotion.py` · 보고서 `docs/rounds/KMB689_promotion_report.md` · 원본 커밋 `945a46f`.
+
+### ⚠ 03_final 세션 자료는 미완결이다 — md 만 있다
+교수 판정 **(나)** 로 markdown 을 먼저 올렸다. **DOCX·PDF 렌더 산출물이 없다** —
+P1 회수 필터(`.md·.csv·.js·.py`)에 걸려 빠졌고, **P2 렌더 꾸러미(55MB)에 있을 것으로 보인다.**
+
+- 2026-08 시험 자산은 3형식을 다 올렸으므로, 그 기준에서 **현재 세션 자료는 배포 가능 상태가 아니다**
+- 2단계 덱 개정은 markdown 을 읽으므로 지금 열린다 — (나)의 근거가 이것이다
+- **완결 조건**: P2 도착 시 같은 방식(바이트 동일 복사·md5 전수 대조)으로 얹는다. **재렌더 금지** —
+  이 저장소에서 다시 렌더하면 원본과 바이트가 달라져 승격 규약이 깨진다
+- 부수 열린 항목: 매핑 §1 의 주차별 셈(121)이 실물(112)보다 9건 많다. 회수 누락인지 셈 방식 차이인지 미확인
+
+
 ## Three curriculum decisions — APPLIED
 1. **ReviewShield = MBA MIS ONLY.** Removed from the Big-Data technique slots; tagged **MIS-lens only** (platform
    trust / governance / game-theoretic modeling — not a data-analytics-technique case). *(Resolves the prior
