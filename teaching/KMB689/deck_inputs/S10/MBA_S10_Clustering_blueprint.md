@@ -6,6 +6,13 @@ filled. **Blueprint only — NO Step-2 content authored.** Fifth technique sessi
 following Regression, Visualization, Text, Association Rules. Fork asset: BUSS256 **M-4**. Korean body, English
 figures (§8.9); two **75-min blocks** + 10-min break.*
 
+**Sep 10, 2026 — Wk10 deck-plan approval recorded.** Plan §7 items 1–5 are approved. This round authors
+**Block 1 only**; Block 2 stays out of scope until the 35-slide first block establishes the standard. Section 1.2
+profile reading is corrected from `fork M-4` to **신규 — 포크 원본 부재**. N4 teaches only how to read a
+cluster as size + profile and find high-z variables. It does **not** disclose the C0 verdict. The all-z≈0 issue
+returns only as questions ① and ③ in §1.5, so students can discover the trap in Block 2. The three figure variants
+remain subject to P2 identity/content verification before authoring.
+
 > ## ✅ PATH RESOLVED — Option A executed (real DBSCAN on snsdata)
 > The SmartSearch brief's DBSCAN was only a **binary dense/non-dense** preprocessing label (no clusters/profiles/
 > noise/parameters — insufficient; see prior version), and TwoSentencePitch is **hierarchical, no noise trap,
@@ -75,18 +82,27 @@ a cluster's name is a **human post-hoc interpretation.** Reading-only.
 | # | Sub-topic | min | Fork / new | Read |
 |---|---|---|---|---|
 | 1.1 | Hook + **"분석을 감독하라" recap** — 기준 = **cluster profile + noise share** | 10 | fork prior creed | — |
-| 1.2 | **군집분석 직관 + 군집 결과 읽기** — 유사도/거리로 묶기(비지도); a cluster = **size + profile(어떤 변수가 높은가 = 중심값)**; "컴퓨터가 비슷한 점을 묶고, **이름은 사람이 나중에.**" | 20 | **fork M-4** (k-means/계층 개념·프로파일 읽기, reading-only) | a cluster's size + profile |
+| 1.2 | **군집분석 직관 + 군집 결과 읽기** — 유사도/거리로 묶기(비지도); a cluster = **size + profile(표에서 z값 높은 변수 찾기)**; "컴퓨터가 비슷한 점을 묶고, **이름은 사람이 나중에.**" N4는 여기까지만 다룬다 | 20 | **신규 — 포크 원본 부재** (M-4에는 k-means/계층 개념만 있고 프로파일 읽기 원본은 없음; reading-only) | a cluster's size + profile |
 | 1.3 | **DBSCAN = 밀도 기반 — 핵심·경계·잡음** *(NEW; M-4는 k-평균/계층)* — 밀도로 묶어 **군집 개수 미리 안 정함**; **잡음점(noise) = 어느 군집에도 안 속하는 점**; **epsilon·minPts** 가 결과를 좌우. "**얼마나 많은 데이터가 잡음인가**"를 반드시 본다 | 15 | **NEW** (DBSCAN 고유) | a DBSCAN result (clusters + **noise**) |
-| 1.4 | **이 사례가 요구하는 판단** — (가) **잡음 무시**: 큰 비중이 무군집인데 AI가 "깔끔한 세분화"로 과장 안 했나(핵심); (나) **사후 의미부여**: AI 이름이 실제 프로파일을 대표하나 — 특히 **거대한 diffuse 군집**을 진짜 세그먼트로 과잉 명명, 또는 **중복 군집**을 다른 세그먼트로; (다) **파라미터 임의성**: eps·minPts 바꾸면 군집·잡음이 달라짐 | 15 | **NEW** framing | — |
+| 1.4 | **이 사례가 요구하는 판단** — (가) **잡음 무시**: 큰 비중이 무군집인데 AI가 "깔끔한 세분화"로 과장 안 했나(핵심); (나) **사후 의미부여**: AI 이름은 어떤 프로파일 변수로 방어되는가, 서로 비슷한 프로파일에 다른 이름을 붙이지 않았는가; (다) **파라미터 임의성**: eps·minPts 바꾸면 군집·잡음이 달라짐. **C0의 판정은 말하지 않는다** | 15 | **NEW** framing | — |
 | 1.5 | **군집 검증 체크리스트 — 사례로 가는 다리** | 15 | **NEW** — the spine | — |
 
-**[슬라이드] 군집 검증 5문:** ① 각 군집의 **실제 프로파일(정의 변수)** 은? ② **얼마나 많은 점이 잡음(무군집)** 인가 —
-AI가 숨겼나? ③ AI **이름이 프로파일을 대표**하나(거대 diffuse 블록·중복 군집 과잉명명 아닌가)? ④ **파라미터
+**[슬라이드] 군집 검증 5문:** ① 각 군집의 **실제 프로파일(정의 변수)** 은 — 표에서 높은 z값은 무엇이며,
+높은 값 없이 z≈0만 있으면 어떻게 판정할 것인가? ② **얼마나 많은 점이 잡음(무군집)** 인가 — AI가 숨겼나?
+③ AI **이름이 프로파일을 대표**하나 — 높은 z값이 없는 블록에도 이름을 붙였나, 거대 diffuse 블록·중복 군집을
+과잉명명한 것은 아닌가? ④ **파라미터
 (eps·minPts)** 는 왜 이 값 — 바꾸면 달라지나? ⑤ 결론이 인과인가 상관인가. *(①②③ 핵심; ④⑤ 토론.)*
 **Block-1 total = 10+20+15+15+15 = 75 ✓.**
 
+> **노출 경계 (2026-09-10 승인):** N4는 `크기 + 프로파일`과 `높은 z값 찾기`까지만 가르친다.
+> `z≈0만 있으면 그 블록을 군집으로 볼 수 있는가`는 §1.5의 ①·③에서 질문으로만 제시한다.
+> C0 판정은 N4뿐 아니라 **1블록 전체에서 답하지 않는다**. §1.4도 일반 검증 기준만 제시한다.
+
 ## 2. SECOND BLOCK — 75 min · 고객 세분화 사례 + AI-검증 활동
 **Delivery:** instructor-demo → guided student-verify (worksheet) → discussion → close. **No clustering-running.**
+
+> **이번 저작 라운드 범위 밖 (2026-09-10 승인).** Block 1의 35장을 먼저 완성해 판정 기준을 세운 뒤 얹는다.
+> 중심 자료인 핸드아웃·Exhibit·워크시트는 이미 저작돼 있다.
 
 | # | Segment | min | Mode |
 |---|---|---|---|
@@ -121,7 +137,7 @@ is interpretation + noise.)*
 ## 5. MATERIALS LIST (Step 2 — Korean body, English figures) — all now BUILDABLE
 | # | Material | Note |
 |---|---|---|
-| 1 | **Lecture notes (KR)** | Forks **M-4** (profile-reading); **NEW** DBSCAN density/core/border/**noise** + parameters. Reading-only. |
+| 1 | **Lecture notes (KR)** | Profile reading is **신규 — 포크 원본 부재**; M-4 contributes only k-means/hierarchical concepts. **NEW** DBSCAN density/core/border/**noise** + parameters. Reading-only. |
 | 2 | **Case handout (KR)** | Marketer segmentation setup + the target/noise decision; opens with fork/2006/observational caveats. No trap pre-reveal. |
 | 3 | **[AI 군집 해석 Exhibit] (KR body + English cluster table)** — the AI-produced analysis | **CORE = a cluster table** (cluster · size · **English defining interests** · AI's confident name · narrative), over the **real §A result**, with the AI **omitting the 26.9% noise** and **over-naming C0** + **treating C3/C4 as distinct**. Profiles/noise honest; names/narrative lie. **✅ Buildable now** (real run done). Noise share revealed at verify (answer-key style, à la Text's coder-relevance). |
 | 4 | **Verification worksheet (KR)** | Checks map to §1.5: profiles → **noise-share reveal** → naming (C0 blob, C3/C4 dup) → parameters → decide. |

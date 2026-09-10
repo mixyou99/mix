@@ -24,7 +24,7 @@
 | 2 | `docs/rounds/ExhibitAE_R2_final.md` | 직전 대규모 라운드의 지시서. 이 프로젝트의 요구 수준을 보여준다 |
 | 3 | `docs/rounds/ExhibitAE_review_R2.md` | 그 지시가 **왜** 필요했는지의 실측 근거 |
 | 4 | `tools/gate_exhibit.py` 헤더와 `검사식 예외 이력` 블록 | 지금까지 잡힌 결함과 **왜 그렇게 고쳤는지**. 되돌리면 안 되는 것들이 여기 있다 |
-| 5 | `CASE_LOG.md` | 케이스 상태·가명 등록부 |
+| 5 | `work/CASE_LOG.md` | 케이스 상태·가명 등록부 |
 | 6 | 해당 라운드의 계획서 | 지금 열려 있는 것은 `docs/rounds/` 의 Wk10 덱 계획서 §7 |
 
 ---
