@@ -1,0 +1,18 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk11/KMB689_Wk11_Classification_R1.pptx",
+  "renderDirectory": "/tmp/kmb689_wk11_render_final.j61Hwr",
+  "reviewedAt": "2026-09-11",
+  "status": "pass",
+  "slidesReviewed": 43,
+  "defects": 0,
+  "checks": {
+    "clipping": 0,
+    "overlap": 0,
+    "unreadable": 0,
+    "wrongSlideOrder": 0,
+    "unintendedPlaceholders": 0
+  },
+  "placeholderSlides": [39],
+  "placeholderFinding": "figD 두 판 부재에 따라 제목·위치·페이지 외 본문·도판이 없는 것을 확인했다.",
+  "note": "초기 렌더 전수 검토 뒤 27장의 비용 부재 결론을 질문형으로 늦췄다. 재빌드 전후 렌더 md5 전수 대조에서 27장만 변경됐고, 최종 27장을 다시 원본 크기로 검토했다. 나머지 42장은 육안 승인 렌더와 바이트 동일하다."
+}

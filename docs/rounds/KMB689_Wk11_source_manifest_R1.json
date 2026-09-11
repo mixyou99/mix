@@ -1,0 +1,670 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk11/KMB689_Wk11_Classification_R1.pptx",
+  "primarySourceDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Classification/Extra_Lecture_Classification.pptx",
+  "secondarySeedDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Fall/BUSS256_BigData/Old/Weeks 13-14/Seminars 22-24_Lecture_Notes.pptx",
+  "secondarySeedSlides": [
+    37,
+    38,
+    40,
+    42,
+    44
+  ],
+  "classification": {
+    "revise": 12,
+    "new": 31
+  },
+  "figurePlaceholders": [
+    39
+  ],
+  "g5Status": "incomplete_excluded_figD_absent",
+  "sourceCatalog": {
+    "KMB78": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Classification/Extra_Lecture_Classification.pptx",
+    "BUSS55": "/Users/gunwoonglee/Downloads/Teaching_2025/Fall/BUSS256_BigData/Old/Weeks 13-14/Seminars 22-24_Lecture_Notes.pptx",
+    "DESIGN": "teaching/KMB689/deck_inputs/reference/MBA_BigData_design_plan.md",
+    "W1": "teaching/KMB689/02_working/Wk1/KMB689_Wk1_Orientation_Supervision_R1.pptx",
+    "S_B1": "teaching/KMB689/03_final/student/MBA_S11_Block1_LectureNotes_KR.md",
+    "S_CASE": "teaching/KMB689/03_final/student/MBA_S11_Case_Handout_KR.md",
+    "S_AI": "teaching/KMB689/03_final/student/MBA_S11_AI_ClassifInterp_Exhibit_KR_STUDENT.md",
+    "S_WS": "teaching/KMB689/03_final/student/MBA_S11_Verification_Worksheet_KR.md",
+    "I_AI": "teaching/KMB689/03_final/instructor/MBA_S11_AI_ClassifInterp_Exhibit_KR_INSTRUCTOR.md",
+    "I_DISC": "teaching/KMB689/03_final/instructor/MBA_S11_Discussion_Prompts_INSTRUCTOR_KR.md",
+    "I_SCRIPT": "teaching/KMB689/03_final/instructor/MBA_S11_Instructor_Demo_Script_INSTRUCTOR_KR.md"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "mapping": "R1",
+      "classification": "revise",
+      "sourceSlides": [
+        2
+      ],
+      "requiredSourceSnippets": [
+        "KMB689",
+        "Classification"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "DESIGN",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 2,
+      "mapping": "N2",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "DESIGN",
+        "S_B1",
+        "S_CASE",
+        "I_SCRIPT",
+        "I_DISC"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 3,
+      "mapping": "N3",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "W1",
+        "S_B1"
+      ],
+      "reveal": "W1-X canonical exposure",
+      "placeholder": false
+    },
+    {
+      "number": 4,
+      "mapping": "N4",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 5,
+      "mapping": "R5",
+      "classification": "revise",
+      "sourceSlides": [
+        3
+      ],
+      "requiredSourceSnippets": [
+        "Classification",
+        "attributes/variables",
+        "class",
+        "outcome/target"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 6,
+      "mapping": "N6",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 7,
+      "mapping": "R7",
+      "classification": "revise",
+      "sourceSlides": [
+        4
+      ],
+      "requiredSourceSnippets": [
+        "Model Construction",
+        "Model Evaluation",
+        "Model Use"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 8,
+      "mapping": "R8",
+      "classification": "revise",
+      "sourceSlides": [
+        6
+      ],
+      "requiredSourceSnippets": [
+        "Training Data",
+        "Test Data"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 9,
+      "mapping": "R9",
+      "classification": "revise",
+      "sourceSlides": [
+        7
+      ],
+      "requiredSourceSnippets": [
+        "Classification Techniques",
+        "Logistic Regression"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 10,
+      "mapping": "N10",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 11,
+      "mapping": "N11",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 12,
+      "mapping": "N12",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 13,
+      "mapping": "N13",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 14,
+      "mapping": "N14",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 15,
+      "mapping": "N15",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 16,
+      "mapping": "N16",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 17,
+      "mapping": "N17",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "generic only; no Airbnb answer",
+      "placeholder": false
+    },
+    {
+      "number": 18,
+      "mapping": "R18",
+      "classification": "revise",
+      "sourceSlides": [
+        34,
+        35
+      ],
+      "requiredSourceSnippets": [
+        "Model Evaluation Metrics",
+        "Model Evaluation"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 19,
+      "mapping": "R19",
+      "classification": "revise",
+      "sourceSlides": [
+        37
+      ],
+      "requiredSourceSnippets": [
+        "Accuracy",
+        "Error Rate"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 20,
+      "mapping": "R20",
+      "classification": "revise",
+      "sourceSlides": [
+        "KMB38",
+        "KMB60",
+        "BUSS37",
+        "BUSS38"
+      ],
+      "requiredSourceSnippets": [
+        "Actual",
+        "Predicted",
+        "TP",
+        "FN",
+        "FP",
+        "TN"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "BUSS55",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 21,
+      "mapping": "N21",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 22,
+      "mapping": "R22",
+      "classification": "revise",
+      "sourceSlides": [
+        "BUSS42",
+        "BUSS44"
+      ],
+      "requiredSourceSnippets": [
+        "TP",
+        "FN",
+        "Sensitivity",
+        "Specificity"
+      ],
+      "sourceRefs": [
+        "BUSS55",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 23,
+      "mapping": "R23",
+      "classification": "revise",
+      "sourceSlides": [
+        "BUSS40"
+      ],
+      "requiredSourceSnippets": [
+        "9990",
+        "10",
+        "99.9 %"
+      ],
+      "sourceRefs": [
+        "BUSS55",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 24,
+      "mapping": "N24",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 25,
+      "mapping": "R25",
+      "classification": "revise",
+      "sourceSlides": [
+        59
+      ],
+      "requiredSourceSnippets": [
+        "Making Mistakes More Costlier than Others"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 26,
+      "mapping": "R26",
+      "classification": "revise",
+      "sourceSlides": [
+        60
+      ],
+      "requiredSourceSnippets": [
+        "Cost Matrix",
+        "TP",
+        "FN",
+        "FP",
+        "TN"
+      ],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 27,
+      "mapping": "N27",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB78",
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "question only; decision withheld",
+      "placeholder": false
+    },
+    {
+      "number": 28,
+      "mapping": "N28",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 29,
+      "mapping": "N29",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "generic leakage tool; no case answer",
+      "placeholder": false
+    },
+    {
+      "number": 30,
+      "mapping": "N30",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 31,
+      "mapping": "N31",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "KMB78",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 32,
+      "mapping": "N32",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "questions only",
+      "placeholder": false
+    },
+    {
+      "number": 33,
+      "mapping": "N33",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "KMB78",
+        "DESIGN"
+      ],
+      "reveal": "questions only",
+      "placeholder": false
+    },
+    {
+      "number": 34,
+      "mapping": "N34",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 35,
+      "mapping": "N35",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "S_CASE",
+        "DESIGN"
+      ],
+      "reveal": "case transition; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 36,
+      "mapping": "N36",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE",
+        "DESIGN"
+      ],
+      "reveal": "surface lure; case handout distributed",
+      "placeholder": false
+    },
+    {
+      "number": 37,
+      "mapping": "N37",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE"
+      ],
+      "reveal": "raw case facts; derived majority answer withheld",
+      "placeholder": false
+    },
+    {
+      "number": 38,
+      "mapping": "N38",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE",
+        "S_AI",
+        "I_SCRIPT"
+      ],
+      "reveal": "AI claims only; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 39,
+      "mapping": "N39",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI",
+        "I_AI"
+      ],
+      "reveal": "figD absent; title and position only",
+      "placeholder": true
+    },
+    {
+      "number": 40,
+      "mapping": "N40",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "I_SCRIPT",
+        "S_AI",
+        "S_CASE"
+      ],
+      "reveal": "questions and stop; script answer lines withheld",
+      "placeholder": false
+    },
+    {
+      "number": 41,
+      "mapping": "N41",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI",
+        "S_WS",
+        "I_SCRIPT"
+      ],
+      "reveal": "student discovery; no answer on screen",
+      "placeholder": false
+    },
+    {
+      "number": 42,
+      "mapping": "N42",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_WS",
+        "KMB78",
+        "I_SCRIPT"
+      ],
+      "reveal": "student calculation; answers withheld",
+      "placeholder": false
+    },
+    {
+      "number": 43,
+      "mapping": "N43",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "I_AI",
+        "I_DISC",
+        "S_WS",
+        "S_CASE"
+      ],
+      "reveal": "first answer reveal after student discovery",
+      "placeholder": false
+    }
+  ]
+}
