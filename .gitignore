@@ -21,3 +21,4 @@ work/source/KMB689_Wk1_S1_Course_Introduction_Class25S.pptx
 
 # npm 설치본 — 렌더러 의존(docx 9.7.1). 커밋하지 않는다
 node_modules/
+.codex-finalizer/
