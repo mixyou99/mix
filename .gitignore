@@ -8,6 +8,9 @@ __pycache__/
 # 원 논문 — 배포권 문제. 경로·해시만 기록한다
 work/source/*.pdf
 
+# 강의 원본 PPTX — 개정 입력. 배포본은 커밋하지 않고 경로·해시만 기록한다
+work/source/KMB689_Wk1_S1_Course_Introduction_Class25S.pptx
+
 # work/ · cases/ · 03_final 의 docx 는 케이스 산출물이다 — 위 *.docx 규칙(무관한 앱에서 온 것)에서 제외.
 # ⚠ 위 두 줄만 있을 때 03_final 승격분이 통째로 무시됐다 (2026-09-10). `/` 를 품은 패턴은
 #    .gitignore 가 있는 디렉터리에 고정되므로 `cases/**` 는 **최상단 cases/ 만** 가리킨다.

@@ -46,6 +46,17 @@ E-G7 도 E-G9 도 통과한다. 3번은 실제로 그렇게 통과할 뻔했다 
 DBSCAN은 반드시 BUSS256 Exercise판의 md5를 먼저 확인하고 사용한다. 재현 조건은 관심사 36열,
 `StandardScaler(ddof=0)`, scikit-learn 1.7.2, `eps=3.0`, `min_samples=25`, `ball_tree`다.
 
+### Wk1 Course Introduction 덱 — Class25S만 쓴다
+
+| 작업 경로 | SHA-256 | 크기 · 장수 | 정체 · 사용 규칙 |
+|---|---|---|---|
+| `work/source/KMB689_Wk1_S1_Course_Introduction_Class25S.pptx` | `b0ef19f9a9763b2d9dbaa8bdb2d553dc9b6b8b48c62b51f5f98b9dd67f9c0f55` | 20,839,192 B · 47장 | **Wk1 개정 정본.** `DECK_CANON_2027S.md`가 KMB689 Spring S1 배포본 출발점으로 지정한 `Seminar 1_Lecture_Course Introduction_Class25S.pptx`의 작업 사본 |
+
+원본 위치는 `/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 1_Course Introduction/`
+이다. 작업 사본을 열기 전에 위 SHA-256을 확인한다. `Seminar 1_Lecture_Course Introduction_Updated.pptx`
+(49장, SHA-256 `d99f8f79ae786b3b02f2d5b0532479e3a6bfb708d7dd7b691a7a5ddbe44238b8`)는 1장에 `KMB581`이
+표기된 다른 과목 재활용본이므로 Wk1 개정에 쓰지 않는다.
+
 ## 2 · 정본이 아닌 사본 — 대조에 쓰지 말 것
 
 ### `24-3-01 송민기 서희진 이건웅(1-21)_교정본.pdf` (Dropbox)
