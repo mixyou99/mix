@@ -1,0 +1,388 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk6/KMB689_Wk6_Good_Analysis_R1.pptx",
+  "visualReference": "work/source/KMB689_Wk1_S1_Course_Introduction_Class25S.pptx",
+  "classification": {
+    "reused": 0,
+    "new": 36
+  },
+  "sourceCatalog": {
+    "DESIGN": "teaching/KMB689/deck_inputs/reference/MBA_BigData_design_plan.md",
+    "PLAN": "docs/rounds/KMB689_Wk6_deck_plan.md",
+    "S_B1": "teaching/KMB689/03_final/student/Wk6_01_lecture_notes_block1.md",
+    "S_B2": "teaching/KMB689/03_final/student/Wk6_02_lecture_notes_block2.md",
+    "S_CASE": "teaching/KMB689/03_final/student/Wk6_03_two_analyses.md",
+    "I_B1": "teaching/KMB689/03_final/instructor/Wk6_01_lecture_notes_block1_INSTRUCTOR_NOTES.md",
+    "I_B2": "teaching/KMB689/03_final/instructor/Wk6_02_lecture_notes_block2_INSTRUCTOR_NOTES.md",
+    "I_CASE": "teaching/KMB689/03_final/instructor/Wk6_03_two_analyses_INSTRUCTOR.md",
+    "I_DISC": "teaching/KMB689/03_final/instructor/Wk6_04_discussion_prompts_INSTRUCTOR.md",
+    "I_SCRIPT": "teaching/KMB689/03_final/instructor/Wk6_05_instructor_demo_script.md"
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "mapping": "N1",
+      "title": "좋은 분석이란 무엇인가",
+      "sourceRefs": [
+        "DESIGN",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 2,
+      "mapping": "N2",
+      "title": "오늘의 두 블록",
+      "sourceRefs": [
+        "I_B1",
+        "I_B2",
+        "I_SCRIPT"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 3,
+      "mapping": "N3",
+      "title": "지난주까지 온 길",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 4,
+      "mapping": "N4",
+      "title": "읽기와 판단",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 5,
+      "mapping": "N5",
+      "title": "오늘의 질문",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 6,
+      "mapping": "N6",
+      "title": "감독에 필요한 것",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 7,
+      "mapping": "N7",
+      "title": "정확한 분석과 좋은 분석",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 8,
+      "mapping": "N8",
+      "title": "AI 모델 정확도 90%",
+      "sourceRefs": [
+        "I_DISC",
+        "I_SCRIPT"
+      ],
+      "reveal": "D1 prompt"
+    },
+    {
+      "slide": 9,
+      "mapping": "N9",
+      "title": "보고서의 첫 줄",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 10,
+      "mapping": "N10",
+      "title": "90%가 가린 것",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 11,
+      "mapping": "N11",
+      "title": "두 가지 틀림",
+      "sourceRefs": [
+        "S_B1",
+        "I_DISC",
+        "I_SCRIPT"
+      ],
+      "reveal": "D2 prompt"
+    },
+    {
+      "slide": 12,
+      "mapping": "N12",
+      "title": "놓쳐서 나는 손해",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 13,
+      "mapping": "N13",
+      "title": "괜히 잡아서 나는 손해",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 14,
+      "mapping": "N14",
+      "title": "틀림의 값",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 15,
+      "mapping": "N15",
+      "title": "정확도의 무게",
+      "sourceRefs": [
+        "S_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 16,
+      "mapping": "N16",
+      "title": "결정이 치르는 값",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 17,
+      "mapping": "N17",
+      "title": "값을 읽는 세 항목",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 18,
+      "mapping": "N18",
+      "title": "이 분석이 옳은 문제를 푸는가",
+      "sourceRefs": [
+        "S_B1",
+        "I_DISC",
+        "I_SCRIPT"
+      ],
+      "reveal": "D3 prompt"
+    },
+    {
+      "slide": 19,
+      "mapping": "N19",
+      "title": "맞물림",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 20,
+      "mapping": "N20",
+      "title": "이탈 예측과 이탈 방지",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1",
+        "I_DISC"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 21,
+      "mapping": "N21",
+      "title": "분석과 결정의 연결",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 22,
+      "mapping": "N22",
+      "title": "관리자의 마지막 질문",
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 23,
+      "mapping": "N23",
+      "title": "좋은 분석의 세 조건",
+      "sourceRefs": [
+        "S_B1",
+        "I_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 24,
+      "mapping": "N24",
+      "title": "정확도 92%짜리 모델을 믿어도 될까",
+      "sourceRefs": [
+        "S_CASE",
+        "S_B2",
+        "I_B2"
+      ],
+      "reveal": "case distributed"
+    },
+    {
+      "slide": 25,
+      "mapping": "N25",
+      "title": "두 종류의 커넥터",
+      "sourceRefs": [
+        "S_CASE"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 26,
+      "mapping": "N26",
+      "title": "한 달 시험 결과",
+      "sourceRefs": [
+        "S_CASE",
+        "I_CASE"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 27,
+      "mapping": "N27",
+      "title": "두 검토",
+      "sourceRefs": [
+        "S_CASE",
+        "I_CASE"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 28,
+      "mapping": "N28",
+      "title": "개별 판단",
+      "sourceRefs": [
+        "S_B2",
+        "I_B2"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 29,
+      "mapping": "N29",
+      "title": "어느 검토가 좋은가",
+      "sourceRefs": [
+        "S_B2",
+        "I_DISC",
+        "I_SCRIPT"
+      ],
+      "reveal": "D4 prompt before debrief"
+    },
+    {
+      "slide": 30,
+      "mapping": "N30",
+      "title": "92%의 판정",
+      "sourceRefs": [
+        "S_CASE",
+        "I_CASE",
+        "I_B2"
+      ],
+      "reveal": "after N29 discussion"
+    },
+    {
+      "slide": 31,
+      "mapping": "N31",
+      "title": "손실이 같다면",
+      "sourceRefs": [
+        "S_CASE",
+        "S_B2",
+        "I_DISC"
+      ],
+      "reveal": "Q3 question only"
+    },
+    {
+      "slide": 32,
+      "mapping": "N32",
+      "title": "그래서 무엇을 하는가",
+      "sourceRefs": [
+        "S_B2",
+        "I_DISC",
+        "I_SCRIPT"
+      ],
+      "reveal": "D5 prompt"
+    },
+    {
+      "slide": 33,
+      "mapping": "N33",
+      "title": "관리자의 다음 질문",
+      "sourceRefs": [
+        "S_B2",
+        "I_B2",
+        "I_DISC"
+      ],
+      "reveal": "questions only"
+    },
+    {
+      "slide": 34,
+      "mapping": "N34",
+      "title": "한빛정밀과 세 조건",
+      "sourceRefs": [
+        "S_B2",
+        "I_B2",
+        "S_CASE"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 35,
+      "mapping": "N35",
+      "title": "감독의 출발점",
+      "sourceRefs": [
+        "S_B2",
+        "I_B2",
+        "I_SCRIPT"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 36,
+      "mapping": "N36",
+      "title": "다음 주",
+      "sourceRefs": [
+        "S_B2",
+        "I_B2",
+        "I_SCRIPT"
+      ],
+      "reveal": "normal"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk6/KMB689_Wk6_Good_Analysis_R1.pptx",
+  "status": "pass",
+  "slidesReviewed": 36,
+  "defects": 0,
+  "method": "36장 전수 개별 렌더 확인 및 5열 몽타주 교차 확인",
+  "renderDirectory": "/tmp/kmb689_wk6_r1_render_final",
+  "montage": "/tmp/kmb689_wk6_r1_montage.png",
+  "checks": {
+    "clipping": "pass",
+    "overlap": "pass",
+    "textLegibility": "pass",
+    "tableLegibility": "pass",
+    "sequenceConsistency": "pass"
+  },
+  "notes": [
+    "슬라이드 1의 경계 밖 개체 경고는 Wk1 표지에서 가져온 배경 장식 요소이며, 렌더 화면의 내용 손실이나 겹침을 만들지 않는다.",
+    "슬라이드 27, 30, 34, 36은 수치·표·마감 문구를 원본 크기로 추가 확인했다.",
+    "검토 결과 화면상 잘림, 의도하지 않은 겹침, 판독 불가 텍스트는 0건이다."
+  ]
+}
