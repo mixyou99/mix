@@ -1,0 +1,29 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk9/KMB689_Wk9_Visualization_MeasurementValidity_R1.pptx",
+  "status": "pass",
+  "slidesReviewed": 43,
+  "defects": 0,
+  "reviewMethod": "43 final PNG renders inspected slide by slide after the final page-number correction",
+  "clipping": 0,
+  "overlap": 0,
+  "unreadable": 0,
+  "placeholderSlides": [37, 38, 42],
+  "placeholderBodyBlank": true,
+  "warnings": [
+    {
+      "slide": 16,
+      "kind": "object_outside_slide_boundary",
+      "objectId": "8",
+      "visualFinding": "none",
+      "classification": "formal; source-derived object geometry; no visible clipping or unreadable content"
+    },
+    {
+      "slide": 18,
+      "kind": "object_outside_slide_boundary",
+      "objectId": "7",
+      "visualFinding": "none",
+      "classification": "formal; source-derived object geometry; no visible clipping or unreadable content"
+    }
+  ],
+  "p2DependentFigureAudit": "not performed; G5 incomplete and excluded pending KMB689_P2_renders_20260909.zip"
+}

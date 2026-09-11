@@ -1,0 +1,668 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk9/KMB689_Wk9_Visualization_MeasurementValidity_R1.pptx",
+  "distributionDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 9_데이터 시각화/Seminar 9_Lecture_Data Visualization.pptx",
+  "inClassSourceDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 9_데이터 시각화/Seminar 9_Lecture_Data Visualization_InClass.pptx",
+  "classification": {
+    "reposition": 6,
+    "revise": 11,
+    "new": 26
+  },
+  "figurePlaceholders": [
+    37,
+    38,
+    42
+  ],
+  "g5Status": "incomplete_excluded_pending_P2",
+  "sourceCatalog": {
+    "KMB119": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 9_데이터 시각화/Seminar 9_Lecture_Data Visualization_InClass.pptx",
+    "KMB107": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 9_데이터 시각화/Seminar 9_Lecture_Data Visualization.pptx",
+    "DESIGN": "teaching/KMB689/deck_inputs/reference/MBA_BigData_design_plan.md",
+    "W1": "teaching/KMB689/02_working/Wk1/KMB689_Wk1_Orientation_Supervision_R1.pptx",
+    "S_B1": "teaching/KMB689/03_final/student/MBA_S9_Block1_LectureNotes_KR.md",
+    "S_CASE": "teaching/KMB689/03_final/student/MBA_S9_Case_Handout_KR.md",
+    "S_AI": "teaching/KMB689/03_final/student/MBA_S9_AI_Dashboard_Exhibit_KR_STUDENT.md",
+    "S_VE": "teaching/KMB689/03_final/student/MBA_S9_Verification_Exhibit_KR.md",
+    "S_WS": "teaching/KMB689/03_final/student/MBA_S9_Verification_Worksheet_KR.md",
+    "I_AI": "teaching/KMB689/03_final/instructor/MBA_S9_AI_Dashboard_Exhibit_KR_INSTRUCTOR.md",
+    "I_DISC": "teaching/KMB689/03_final/instructor/MBA_S9_Discussion_Prompts_INSTRUCTOR_KR.md",
+    "I_SCRIPT": "teaching/KMB689/03_final/instructor/MBA_S9_Instructor_Demo_Script_INSTRUCTOR_KR.md"
+  },
+  "slides": [
+    {
+      "number": 1,
+      "mapping": "R1",
+      "classification": "revise",
+      "sourceSlides": [
+        2
+      ],
+      "requiredSourceSnippets": [
+        "Seminar 9 Data Visualization",
+        "KMB689: Big Data for Business Applications",
+        "Korea University Business School"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "KMB107",
+        "DESIGN",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 2,
+      "mapping": "N2",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "DESIGN",
+        "S_B1",
+        "S_CASE",
+        "I_SCRIPT",
+        "I_DISC"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 3,
+      "mapping": "N3",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "W1",
+        "S_B1"
+      ],
+      "reveal": "W1-X canonical exposure",
+      "placeholder": false
+    },
+    {
+      "number": 4,
+      "mapping": "R4",
+      "classification": "revise",
+      "sourceSlides": [
+        3,
+        4
+      ],
+      "requiredSourceSnippets": [
+        "수업 목표",
+        "데이터 시각화의 중요성 이해",
+        "데이터 시각화의 핵심 요구사항 파악"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 5,
+      "mapping": "R5",
+      "classification": "revise",
+      "sourceSlides": [
+        9,
+        10
+      ],
+      "requiredSourceSnippets": [
+        "데이터 시각화란?",
+        "목적성",
+        "정확성"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 6,
+      "mapping": "R6",
+      "classification": "revise",
+      "sourceSlides": [
+        14
+      ],
+      "requiredSourceSnippets": [
+        "데이터 시각화의 필요성",
+        "동일한 요약 통계 정보"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 7,
+      "mapping": "R7",
+      "classification": "revise",
+      "sourceSlides": [
+        25
+      ],
+      "requiredSourceSnippets": [
+        "목적에 따라 적적한 그래프 선택"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 8,
+      "mapping": "R8",
+      "classification": "revise",
+      "sourceSlides": [
+        22
+      ],
+      "requiredSourceSnippets": [
+        "연속변수: 히스토그램",
+        "불연속변수: 막대그래프"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 9,
+      "mapping": "N9",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 10,
+      "mapping": "R10",
+      "classification": "reposition",
+      "sourceSlides": [
+        22
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 11,
+      "mapping": "R11",
+      "classification": "reposition",
+      "sourceSlides": [
+        21
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 12,
+      "mapping": "N12",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 13,
+      "mapping": "N13",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 14,
+      "mapping": "R14",
+      "classification": "revise",
+      "sourceSlides": [
+        26,
+        27
+      ],
+      "requiredSourceSnippets": [
+        "다음 그래프의 문제점은?"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 15,
+      "mapping": "R15",
+      "classification": "reposition",
+      "sourceSlides": [
+        38
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 16,
+      "mapping": "R16",
+      "classification": "revise",
+      "sourceSlides": [
+        44,
+        56
+      ],
+      "requiredSourceSnippets": [
+        "잘못된 그래프 사용 및 시계열 무시",
+        "데이터에 적절하지 않은 그래프 사용"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 17,
+      "mapping": "R17",
+      "classification": "revise",
+      "sourceSlides": [
+        33,
+        35,
+        36
+      ],
+      "requiredSourceSnippets": [
+        "세로축 범위 (눈금) 바꾸기",
+        "값의 차이를 과대/축소 시킴",
+        "잘못된 시계열 표기"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 18,
+      "mapping": "R18",
+      "classification": "reposition",
+      "sourceSlides": [
+        37
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 19,
+      "mapping": "R19",
+      "classification": "revise",
+      "sourceSlides": [
+        57,
+        58,
+        59
+      ],
+      "requiredSourceSnippets": [
+        "그래프에 자료가 빠짐",
+        "그래프해석에 대한 설명이 필요함",
+        "정렬순서 미흡, 제목과의 불일치"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 20,
+      "mapping": "R20",
+      "classification": "revise",
+      "sourceSlides": [
+        60
+      ],
+      "requiredSourceSnippets": [
+        "변수이름",
+        "변수의 단위",
+        "자료의 출처",
+        "범례"
+      ],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 21,
+      "mapping": "N21",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 22,
+      "mapping": "N22",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 23,
+      "mapping": "N23",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 24,
+      "mapping": "N24",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 25,
+      "mapping": "N25",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 26,
+      "mapping": "N26",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 27,
+      "mapping": "N27",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 28,
+      "mapping": "N28",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 29,
+      "mapping": "N29",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 30,
+      "mapping": "N30",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 31,
+      "mapping": "N31",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "questions only",
+      "placeholder": false
+    },
+    {
+      "number": 32,
+      "mapping": "R32",
+      "classification": "reposition",
+      "sourceSlides": [
+        62
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "question only",
+      "placeholder": false
+    },
+    {
+      "number": 33,
+      "mapping": "R33",
+      "classification": "reposition",
+      "sourceSlides": [
+        63
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "KMB119",
+        "S_B1"
+      ],
+      "reveal": "generic chart answer only",
+      "placeholder": false
+    },
+    {
+      "number": 34,
+      "mapping": "N34",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal",
+      "placeholder": false
+    },
+    {
+      "number": 35,
+      "mapping": "N35",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "DESIGN",
+        "S_B1",
+        "S_CASE"
+      ],
+      "reveal": "case named; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 36,
+      "mapping": "N36",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE",
+        "DESIGN"
+      ],
+      "reveal": "surface lure; handout withheld until 2.3",
+      "placeholder": false
+    },
+    {
+      "number": 37,
+      "mapping": "N37",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI"
+      ],
+      "reveal": "P2 pending; body intentionally blank",
+      "placeholder": true
+    },
+    {
+      "number": 38,
+      "mapping": "N38",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI"
+      ],
+      "reveal": "P2 pending; body intentionally blank",
+      "placeholder": true
+    },
+    {
+      "number": 39,
+      "mapping": "N39",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI",
+        "I_SCRIPT"
+      ],
+      "reveal": "AI claim only; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 40,
+      "mapping": "N40",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "I_SCRIPT",
+        "S_AI"
+      ],
+      "reveal": "questions and stop; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 41,
+      "mapping": "N41",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE",
+        "S_AI",
+        "S_WS",
+        "S_VE",
+        "I_SCRIPT"
+      ],
+      "reveal": "student discovery instructions; no answer",
+      "placeholder": false
+    },
+    {
+      "number": 42,
+      "mapping": "N42",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_VE"
+      ],
+      "reveal": "P2 pending; body intentionally blank",
+      "placeholder": true
+    },
+    {
+      "number": 43,
+      "mapping": "N43",
+      "classification": "new",
+      "sourceSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_VE",
+        "S_WS",
+        "I_AI",
+        "I_DISC"
+      ],
+      "reveal": "first answer reveal after student discovery slot",
+      "placeholder": false
+    }
+  ]
+}
