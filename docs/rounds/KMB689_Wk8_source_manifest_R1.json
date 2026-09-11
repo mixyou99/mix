@@ -1,0 +1,662 @@
+{
+  "deck": "teaching/KMB689/02_working/Wk8/KMB689_Wk8_Regression_CausalInference_R1.pptx",
+  "sourceDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Fall/BUSS256_BigData/Seminar 8-9 LRM/Seminars 8-9_Linear Regression Model_InClass3_F25.pptx",
+  "terminologyDeck": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 8_LRM/Seminar 8_Linear Regression Models_Inclass.pptx",
+  "classification": {
+    "reposition": 4,
+    "revise": 15,
+    "new": 24
+  },
+  "sourceCatalog": {
+    "BUSS": "/Users/gunwoonglee/Downloads/Teaching_2025/Fall/BUSS256_BigData/Seminar 8-9 LRM/Seminars 8-9_Linear Regression Model_InClass3_F25.pptx",
+    "KMB": "/Users/gunwoonglee/Downloads/Teaching_2025/Spring/4_KBM_689_Big Data/Seminar 8_LRM/Seminar 8_Linear Regression Models_Inclass.pptx",
+    "DESIGN": "teaching/KMB689/deck_inputs/reference/MBA_BigData_design_plan.md",
+    "W1": "teaching/KMB689/02_working/Wk1/KMB689_Wk1_Orientation_Supervision_R1.pptx",
+    "S_B1": "teaching/KMB689/03_final/student/MBA_S8_Block1_LectureNotes_KR.md",
+    "S_CASE": "teaching/KMB689/03_final/student/MBA_S8_Case_Handout_KR.md",
+    "S_E1": "teaching/KMB689/03_final/student/MBA_S8_Exhibit1_SummaryStats_KR.md",
+    "S_E2": "teaching/KMB689/03_final/student/MBA_S8_Exhibit2_Decomposition_KR.md",
+    "S_AI": "teaching/KMB689/03_final/student/MBA_S8_AI_Output_Exhibit_KR_STUDENT.md",
+    "S_WS": "teaching/KMB689/03_final/student/MBA_S8_Verification_Worksheet_KR.md",
+    "I_AI": "teaching/KMB689/03_final/instructor/MBA_S8_AI_Output_Exhibit_KR_INSTRUCTOR.md",
+    "I_DISC": "teaching/KMB689/03_final/instructor/MBA_S8_Discussion_Prompts_INSTRUCTOR_KR.md",
+    "I_SCRIPT": "teaching/KMB689/03_final/instructor/MBA_S8_Instructor_Demo_Script_INSTRUCTOR_KR.md"
+  },
+  "slides": [
+    {
+      "slide": 1,
+      "mapping": "R1",
+      "classification": "revise",
+      "bussSlides": [
+        1
+      ],
+      "requiredSourceSnippets": [
+        "Linear Regression Model",
+        "Korea University Business School"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "DESIGN",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 2,
+      "mapping": "N2",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "DESIGN",
+        "S_B1",
+        "S_CASE",
+        "I_SCRIPT",
+        "I_DISC"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 3,
+      "mapping": "N3",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "W1",
+        "S_B1"
+      ],
+      "reveal": "W1-X canonical exposure"
+    },
+    {
+      "slide": 4,
+      "mapping": "N4",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "DESIGN"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 5,
+      "mapping": "N5",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 6,
+      "mapping": "R6",
+      "classification": "revise",
+      "bussSlides": [
+        3,
+        4
+      ],
+      "requiredSourceSnippets": [
+        "Regression analysis is a probabilistic model"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 7,
+      "mapping": "R7",
+      "classification": "revise",
+      "bussSlides": [
+        4,
+        5
+      ],
+      "requiredSourceSnippets": [
+        "Dependent/Response/Target/Outcome Variable",
+        "Independent/Explanatory Variables/Predictors"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 8,
+      "mapping": "R8",
+      "classification": "revise",
+      "bussSlides": [
+        7,
+        8
+      ],
+      "requiredSourceSnippets": [
+        "y = a + bx",
+        "Intercept",
+        "Slope"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 9,
+      "mapping": "R9",
+      "classification": "reposition",
+      "bussSlides": [
+        6
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "BUSS",
+        "KMB"
+      ],
+      "reveal": "source full text retained except page number"
+    },
+    {
+      "slide": 10,
+      "mapping": "R10",
+      "classification": "reposition",
+      "bussSlides": [
+        10
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "BUSS",
+        "KMB"
+      ],
+      "reveal": "source full text retained except page number"
+    },
+    {
+      "slide": 11,
+      "mapping": "R11",
+      "classification": "revise",
+      "bussSlides": [
+        30,
+        31,
+        32
+      ],
+      "requiredSourceSnippets": [
+        "Estimate",
+        "Standard Error",
+        "t Value",
+        "P-value"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 12,
+      "mapping": "R12",
+      "classification": "revise",
+      "bussSlides": [
+        22,
+        23
+      ],
+      "requiredSourceSnippets": [
+        "p-value",
+        "Significance Level (α)"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 13,
+      "mapping": "R13",
+      "classification": "revise",
+      "bussSlides": [
+        33
+      ],
+      "requiredSourceSnippets": [
+        "0.1%",
+        "0.001",
+        "0.01",
+        "0.05",
+        "***"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 14,
+      "mapping": "R14",
+      "classification": "reposition",
+      "bussSlides": [
+        41,
+        43
+      ],
+      "requiredSourceSnippets": [
+        "70%Explained by IV’s",
+        "30%Not explained by IV’s"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "source slide 41 retained; slide 43 supplies the 70/30 reading example"
+    },
+    {
+      "slide": 15,
+      "mapping": "N15",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "general lure only; no SmartAds answer"
+    },
+    {
+      "slide": 16,
+      "mapping": "R16",
+      "classification": "revise",
+      "bussSlides": [
+        71
+      ],
+      "requiredSourceSnippets": [
+        "Multiple Liner Regression Model on Mobile App Sales"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 17,
+      "mapping": "R17",
+      "classification": "reposition",
+      "bussSlides": [
+        71
+      ],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "source full text retained except page number"
+    },
+    {
+      "slide": 18,
+      "mapping": "R18",
+      "classification": "revise",
+      "bussSlides": [
+        72
+      ],
+      "requiredSourceSnippets": [
+        "-ln(Rank) = -6.556***",
+        "0.152"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 19,
+      "mapping": "R19",
+      "classification": "revise",
+      "bussSlides": [
+        72
+      ],
+      "requiredSourceSnippets": [
+        "Price",
+        "Rating_Score"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 20,
+      "mapping": "R20",
+      "classification": "revise",
+      "bussSlides": [
+        72
+      ],
+      "requiredSourceSnippets": [
+        "Predicted Model"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 21,
+      "mapping": "R21",
+      "classification": "revise",
+      "bussSlides": [
+        58,
+        59,
+        60
+      ],
+      "requiredSourceSnippets": [
+        "if all other variables in the model are held constant."
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "KMB",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 22,
+      "mapping": "R22",
+      "classification": "revise",
+      "bussSlides": [
+        72
+      ],
+      "requiredSourceSnippets": [
+        "Utilities = 1",
+        "Games"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 23,
+      "mapping": "R23",
+      "classification": "revise",
+      "bussSlides": [
+        72
+      ],
+      "requiredSourceSnippets": [
+        "0.678",
+        "0.638",
+        "0.491",
+        "0.518"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 24,
+      "mapping": "R24",
+      "classification": "revise",
+      "bussSlides": [
+        65,
+        72
+      ],
+      "requiredSourceSnippets": [
+        "Log(Sales)",
+        "Price",
+        "- 0.045",
+        "0.152"
+      ],
+      "sourceRefs": [
+        "BUSS",
+        "S_B1",
+        "S_E1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 25,
+      "mapping": "N25",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "tool only; no case answer"
+    },
+    {
+      "slide": 26,
+      "mapping": "N26",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "S_E2",
+        "S_WS"
+      ],
+      "reveal": "general identity only"
+    },
+    {
+      "slide": 27,
+      "mapping": "N27",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "generic examples, not SmartAds values"
+    },
+    {
+      "slide": 28,
+      "mapping": "N28",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "question only"
+    },
+    {
+      "slide": 29,
+      "mapping": "N29",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "S_E1"
+      ],
+      "reveal": "general comparison trap only"
+    },
+    {
+      "slide": 30,
+      "mapping": "N30",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "I_DISC"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 31,
+      "mapping": "N31",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 32,
+      "mapping": "N32",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 33,
+      "mapping": "N33",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1"
+      ],
+      "reveal": "normal"
+    },
+    {
+      "slide": 34,
+      "mapping": "N34",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "I_SCRIPT"
+      ],
+      "reveal": "questions only"
+    },
+    {
+      "slide": 35,
+      "mapping": "N35",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_B1",
+        "S_CASE"
+      ],
+      "reveal": "case named; no result or answer"
+    },
+    {
+      "slide": 36,
+      "mapping": "N36",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_CASE"
+      ],
+      "reveal": "case setup only"
+    },
+    {
+      "slide": 37,
+      "mapping": "N37",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_E1",
+        "S_CASE"
+      ],
+      "reveal": "surface values only; students inspect pre-period gap"
+    },
+    {
+      "slide": 38,
+      "mapping": "N38",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_AI",
+        "S_E1",
+        "I_SCRIPT"
+      ],
+      "reveal": "AI claim displayed as verification target"
+    },
+    {
+      "slide": 39,
+      "mapping": "N39",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "I_SCRIPT",
+        "S_AI"
+      ],
+      "reveal": "smell only; actual direction withheld"
+    },
+    {
+      "slide": 40,
+      "mapping": "N40",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_WS",
+        "S_E2",
+        "I_SCRIPT"
+      ],
+      "reveal": "student discovery; no answer on screen"
+    },
+    {
+      "slide": 41,
+      "mapping": "N41",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_E2",
+        "S_WS",
+        "I_DISC"
+      ],
+      "reveal": "first actual mechanism reveal"
+    },
+    {
+      "slide": 42,
+      "mapping": "N42",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_E1",
+        "S_E2",
+        "S_AI",
+        "I_AI",
+        "I_DISC"
+      ],
+      "reveal": "post-activity answer and interpretation"
+    },
+    {
+      "slide": 43,
+      "mapping": "N43",
+      "classification": "new",
+      "bussSlides": [],
+      "requiredSourceSnippets": [],
+      "sourceRefs": [
+        "S_WS",
+        "S_E2",
+        "I_DISC"
+      ],
+      "reveal": "decision after reveal"
+    }
+  ]
+}
